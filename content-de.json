@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "title": "Clínica Urquiza",
+    "subtitle": "Chronologie eines Mordes in 7 Tagen",
+    "description": "Das Zeugnis einer Familie, die beobachtete, wie medizinische Fahrlässigkeit einen guten Menschen folterte und tötete und das Vertrauen in die Medizin in eine Kriegsverletzung verwandelte"
+  },
+  "introduction": {
+    "text": [
+      "Es gibt ein Davor und ein Danach, wenn man sieht, wie jemand vor den eigenen Augen gefoltert und getötet wird. Besonders wenn es Familie ist. Dieses Davor und Danach hat mich getroffen. Dies ist mein Zeugnis.",
+      "Mein Onkel Aris war ein Mensch voller Energie und Lebensfreude. Leider hatte er am 1. Juni einen Verkehrsunfall, der ihn in die Clínica Urquiza brachte. Er erlitt keine Frakturen, Gott sei Dank; er hatte sich nur am rechten Bein in der Nähe des Knies verletzt.",
+      "Das, was nach diesem anfänglichen Unfall folgte, war eine Kaskade fahrlässiger medizinischer Entscheidungen, die zum Tode meines Onkels führen würde. Und alles begann, als die Ärzte der Clínica Urquiza beschlossen, eine schwerwiegende Komplikation nicht zu behandeln, die sie bereits identifiziert hatten."
+    ]
+  },
+  "secondMalpractice": {
+    "title": "Medizinische Fahrlässigkeit: Ein Leidensweg in 7 Tagen",
+    "timeline": [
+      {
+        "date": "Sonntag 02/08",
+        "content": "Wir bemerkten, dass der Fuß und die Wade meines Onkels lila und kalt waren. Wir riefen PAMI (Rettungsdienst) an. Der Krankenwagen traf um 17 Uhr im Haus meines Onkels ein. Wir fuhren direkt zur Clínica Urquiza, und gegen 20 Uhr wurde er zur stationären Aufnahme eingeliefert, um die Ursachen seiner Symptome zu untersuchen."
+      },
+      {
+        "date": "Montag 03/08",
+        "content": "Wir warteten, während wir beobachteten, dass die Infektion weiter sein linkes Bein hinaufstieg, und wurden vom Dr. Dario Castro (in dieser Woche für die Station verantwortlich) stets darüber informiert, dass es sich um ein Kreislaufproblem handele."
+      },
+      {
+        "date": "Dienstag",
+        "content": "Wir warteten…"
+      },
+      {
+        "date": "Mittwoch",
+        "content": "Am Nachmittag wurde ein Angiogramm durchgeführt. Dr. Pedro Cepa teilte uns mit, dass mein Onkel in einem delikaten Zustand war und dass der Chirurg am nächsten Tag mit uns sprechen würde, um die nächsten Schritte zu bestimmen."
+      },
+      {
+        "date": "Donnerstag",
+        "content": "Am späten Nachmittag kam der Chirurg und teilte uns mit, dass das Bein amputiert werden müsse. ABER, verdächtig, sagte er uns, dass sie nur montags oder mittwochs operieren.\n\nMeine Zweifel beginnen… Sie brauchten drei Tage, um ein Angiogramm durchzuführen, und sagten uns dann, „das Bein sei bereits verloren, es gebe nichts zu tun, und es müsse amputiert werden", in den Worten des Stationsarztes selbst, am selben Donnerstagmorgen, Dr. Dario Castro.\n\nWenn es ein Notfall ist, warum operieren sie nicht sofort?"
+      },
+      {
+        "date": "Freitag",
+        "content": "Früh am Morgen drängte ich darauf, dass sie sofort operieren, mit Anwälten und Druck auf die Klinikleitung. Schließlich operierten sie an diesem Tag und amputierten das Bein. Mit all dem Schmerz, den das für den Patienten, meinen Onkel, bedeutete, aber auch für uns die Hoffnung, die Nekrose zu stoppen und den schmerzhaften und schwierigen Genesungsprozess zu beginnen."
+      },
+      {
+        "date": "Samstag",
+        "content": "Der Arzt wechselt. Das war der Moment der Wahrheit.\n\nWir bemerkten, dass auch die Finger seiner Hand schwarz wurden und die Fußsohle seines anderen Fußes.\n\nAlso konfrontierte ich den neuen diensthabenden Arzt, Dr. Daniel Galeano, und bat ihn, meinem Onkel sofort zu helfen, ihm Antikoagulanzien zu geben, weil „das Kreislaufproblem" weiter fortschritt, dass wir Anwälte eingeschaltet hatten und die beste Behandlung für ihn verlangten… Zu spät.\n\nDas Geständnis: „Es gibt nichts zu tun. Er hat eine Blutinfektion, und sie ist bereits sehr weit fortgeschritten; sie muss andere Organe beeinträchtigt haben. Wir haben ein Antibiogramm veranlasst, aber bis wir sicher wissen, welche Bakterie es ist, müssen wir ihn mit allgemeinen Antibiotika behandeln".\n\nWas? Ich erstarrte. Ich rief meinen Anwalt an, und er sagte: KUNSTFEHLER.\n\nAber in meinem Herzen hallte nur ein Todesurteil wider. Wie konnten sie so grausam sein, ihm das Bein zu amputieren, obwohl sie wussten, dass sie ihn bereits zum Tode verurteilt hatten? Sie verabreichten ihm nicht einmal rechtzeitig Schmerzmittel; mein Onkel schrie vor Schmerzen, war unruhig… er verbrachte die ganze Nacht so."
+      },
+      {
+        "date": "Sonntag 09/08",
+        "content": "Mein Onkel verbrachte die ganze Nacht schreiend vor Schmerzen, riss sich die Infusionsleitungen heraus, die Windel… also beschlossen sie, ihn festzubinden. So viel Folter, so viel Mangel an Mitgefühl.\n\nIch beschwerte mich erneut bei Dr. Daniel Galeano, damit sie ihm die notwendigen Schmerzmittel verabreichten; er ging zu ihm, änderte nichts und sagte mir: „Es gibt nichts mehr zu tun."\n\nMein Onkel Aris starb an einer allgemeinen Sepsis, nach sieben Tagen im Krankenhaus."
+      }
+    ],
+    "warning": "Die Realität: Es wirkt wie ein Horrorfilm, aber es ist mir passiert, und ich kann es immer noch nicht verarbeiten. Die Kumpanei von Ärzten, die ihren Beruf nicht mit der Sorgfalt und Aufmerksamkeit ausüben, die die Zerbrechlichkeit eines Lebens verdient und geehrt werden muss, und von Krankenschwestern, die ihre Arbeit nicht gut machen (es gab viele Beschwerden während der Zeit, in der mein Onkel im Krankenhaus war), die einem weder ihre Namen noch ihre Nachnamen nennen, noch einen korrekt informieren, ist unbeschreiblich."
+  },
+  "firstMalpractice": {
+    "title": "Die Vernachlässigung: Es war nicht nur eine Fahrlässigkeit, es waren zwei",
+    "introduction": [
+      "Die Probleme begannen, bevor wir die fatale Woche im August erreichten. Mein Onkel wurde am 23. Juli wegen starker Magenschmerzen aufgenommen. Er hatte etwas gegessen, das ihm nicht bekommen war, und da er einen großen Tumor im Magen hatte (unbestimmter Art), war es das Beste, ihn zur Beobachtung stationär aufzunehmen, um sicher zu gehen.",
+      "Während dieser Hospitalisierung wurde ein Brust-CT durchgeführt. Und hier geschah das Unverständliche: Sie identifizierten einen bilateralen Pleuraerguss in der linken Lunge. Ein ernstes Problem, das sofortige ärztliche Aufmerksamkeit erforderte… aber was taten die Ärzte dagegen?"
+    ],
+    "warning": "NICHTS. ABSOLUT NICHTS.\n\nEs wurde keine Behandlung verschrieben. Keine Überwachung. Sie ignorierten es einfach. Sie entließen ihn am 28. Juli 2026 mit der Anweisung, seine Basisbehandlung fortzusetzen: Omeprazol, Tramadol und Paracetamol….",
+    "narrative": [
+      "Mein Onkel konnte nicht gut essen. Er konnte nicht schlafen. Er war sichtlich in schlechtem Zustand. Wir konnten es sehen, obwohl wir keine Ärzte sind. Aber die Clínica Urquiza schickte ihn einfach nach Hause. Ohne Überwachung. Ohne Nachverfolgung. Ohne Behandlung für diesen Erguss, der sich später als frühes Zeichen von etwas viel Ernsthafterem herausstellte.",
+      "Fünf Tage später, am 2. August, mussten wir PAMI erneut anrufen. Meinem Onkel ging es viel schlechter. Er hatte eine Infektion im Bein, und diese Infektion war bereits in seinem Blutkreislauf. Eine Infektion, die hätte gestoppt werden können, wenn der Pleuraerguss angemessen behandelt worden wäre. Eine Infektion, die durch Fahrlässigkeit zu einer Sepsis wurde.",
+      "Das war die erste Fahrlässigkeit. Und sie führte direkt zur zweiten. Und die zweite führte zu seinem Tod."
+    ]
+  },
+  "conclusion": {
+    "text": [
+      "Man möchte glauben, dass Ärzte dazu ausgebildet wurden, zu helfen, das Gute zu tun, den Nächsten zu heilen. Aber manchmal verwandeln Fahrlässigkeit, Gleichgültigkeit und Mangel an Mitgefühl eine Gesundheitsinstitution in einen Ort der Folter.",
+      "Hätte ich keine guten Anwälte gehabt, hätte ich niemals entdeckt, dass mein Onkel nicht eine, sondern zwei medizinische Fahrlässigkeiten erlitt. Schauderlich, makaber und absolut unmenschlich…"
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 Zeugnis von Aristovol Gomez | Clínica Urquiza - Dokumentation der Medizinischen Fahrlässigkeit",
+    "note": "Diese Website dokumentiert einen Fall von schwerwiegender medizinischer Fahrlässigkeit zu Bildungs- und Gerechtigkeitszwecken."
+  }
+}

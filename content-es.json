@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "title": "Clínica Urquiza",
+    "subtitle": "Cronología de un asesinato en 7 días",
+    "description": "El testimonio de una familia que presenció cómo la negligencia médica torturó y mató a un buen hombre transformando la confianza en la medicina en una una herida de guerra"
+  },
+  "introduction": {
+    "text": [
+      "Hay un antes y un después de ver a alguien torturado y asesinado delante de tus ojos. Especialmente si es familia. Ese antes y después nos tocó a mí. Este es mi testimonio.",
+      "Mi tío Aris era una persona llena de energía y con muchas ganas de vivir. Lamentablemente, el 1 de junio tuvo un accidente de tránsito que lo llevó a la Clínica Urquiza. No tuvo ninguna fractura, gracias a Dios; solo se había lastimado la pierna derecha cerca de la rodilla.",
+      "Lo que seguiría después de ese accidente inicial sería una cascada de decisiones médicas negligentes que culminarían en la muerte de mi tío. Y todo comenzó cuando los médicos de la Clínica Urquiza decidieron no tratar una complicación seria que ya habían identificado."
+    ]
+  },
+  "secondMalpractice": {
+    "title": "Mala Praxis: Un Calvario en 7 Días",
+    "timeline": [
+      {
+        "date": "Domingo 02/08",
+        "content": "Notamos que mi tío tenía el pie y la pantorrilla morados y fríos. Llamamos al PAMI (servicio de ambulancia). La ambulancia llegó a las 17 horas al domicilio. Fuimos directo a la Clínica Urquiza y a las 20 horas aproximadamente le dieron el alta de internación para estudiar los motivos de su sintomatología."
+      },
+      {
+        "date": "Lunes 03/08",
+        "content": "Esperamos mientras observábamos que la infección seguía subiendo por la pierna izquierda, siempre informados por el Dr. Dario Castro (a cargo del piso esa semana) de que se trataba de un problema circulatorio."
+      },
+      {
+        "date": "Martes",
+        "content": "Esperamos…"
+      },
+      {
+        "date": "Miércoles",
+        "content": "Le hacen el angiograma por la tarde. El Dr. Pedro Cepa ya nos dice que mi tío se encontraba delicado y que al día siguiente hablaría con nosotros el cirujano para determinar los pasos a seguir."
+      },
+      {
+        "date": "Jueves",
+        "content": "Al finalizar la tarde viene el cirujano y nos informa que hay que amputar. PERO (sospechosamente), nos comunica que solo operan los lunes o miércoles.\n\nEmpiezan mis dudas… Tardaron tres días en hacerle un angiograma y luego nos informaron que \"la pierna ya estaba perdida, que no había nada que hacer, y que había que amputar\", en palabras propias del médico de piso, mismo día Jueves por la mañana, Dr. Dario Castro.\n\nSi es una urgencia, ¿por qué no operan inmediatamente?"
+      },
+      {
+        "date": "Viernes",
+        "content": "A primera hora presioné para que hicieran la operación de inmediato, con abogados y apurando a los jefes de la clínica. Finalmente LO OPERARON EN EL DIA y le amputaron la pierna. Con todo el dolor que eso significó para el paciente, mi tío, pero también para nosotros una esperanza de detener la necrosis y comenzar el penoso y doloroso proceso de recuperación."
+      },
+      {
+        "date": "Sábado",
+        "content": "CAMBIA EL MEDICO. Esa fue la hora de la verdad.\n\nNotamos que los dedos de la mano también se estaban poniendo negros, y la planta del otro pie.\n\nEntonces le reclamo al nuevo médico de turno, el Dr. Daniel Galeano, para que ayuden a mi tío de inmediato, que le den anticoagulantes porque \"el problema circulatorio\" seguía avanzando, que habíamos puesto abogados y exigíamos el mejor tratamiento para él… Demasiado tarde.\n\nLa confesión: \"No hay nada que hacer. Tiene una infección en la sangre y ya está muy avanzada; debe haber comprometido otros órganos. Mandamos a hacer un antibiograma, pero hasta saber con certeza qué bacteria es, tenemos que tratarlo con antibióticos generales\".\n\n¿Cómo? Me quedé helada. Llamé a mi abogado y me dijo: MALA PRAXIS.\n\nPero en mi corazón solo resonó una sentencia de muerte. ¿Cómo pudieron ser tan crueles de amputarle la pierna sabiendo que ya lo habían sentenciado a muerte? Tampoco le administraban los calmantes a tiempo; mi tío gritaba de dolor, se agitaba… pasó así toda la noche."
+      },
+      {
+        "date": "Domingo 09/08",
+        "content": "Mi tío pasó toda la noche gritando de dolor, se arrancaba las vías, el pañal… entonces decidieron atarlo. Cuánta tortura, cuánta falta de compasión.\n\nMe quejo de nuevo con el Dr. Daniel Galeano para que le administren los calmantes necesarios, va a verlo, no hizo ningún cambio, y me dice… \"ya no hay nada que hacer\".\n\nMi tío Aris muere de sepsis general, después de siete días internado."
+      }
+    ],
+    "warning": "La realidad: Parece una película de terror, pero me pasó a mí, y todavía no puedo procesarlo. Es inenarrable la connivencia de doctores que no ejercen su profesión con la meticulosidad y el detalle que la delicadeza de una vida amerita y debe ser honrada, y de enfermeras que no hacen bien su trabajo (hubo muchas quejas durante el tiempo que mi tío estuvo internado), que no te dan sus nombres, ni sus apellidos, ni te informan correctamente \"para cubrirse\" de lo que pueda pasar."
+  },
+  "firstMalpractice": {
+    "title": "El Abandono: No fue sólo una mala praxis, fueron dos",
+    "introduction": [
+      "Los problemas comenzaron antes de que llegáramos a esa semana fatal de agosto. Mi tío fue internado el 23 de julio por un dolor de estómago muy fuerte. Había comido algo que le hizo mal, y dado que tenía un tumor grande en el estómago (indeterminado de qué tipo), lo mejor era dejarlo en observación para estar seguro.",
+      "Durante esa internación, le realizaron un TAC de tórax. Y aquí es donde sucedió lo incomprehensible: identificaron un derrame Pleural Bilateral en el pulmón izquierdo. Un problema serio que requería atención médica inmediata… pero ¿qué hicieron los médicos al respecto?"
+    ],
+    "warning": "NADA. ABSOLUTAMENTE NADA.\n\nNo se prescribió tratamiento alguno. No se monitoreó. Simplemente lo ignoraron. Lo dieron de alta el 28 de julio de 2026 con instrucciones de que continuara su tratamiento base: omeprazol, tramadol, y paracetamol….",
+    "narrative": [
+      "Mi tío no podía comer bien. No podía dormir. Estaba visiblemente en malas condiciones. Nosotros podíamos verlo, aunque no somos médicos. Pero la Clínica Urquiza lo envió a casa así. Sin monitoreo. Sin seguimiento. Sin tratamiento para ese derrame que ahora sabemos era un signo temprano de algo mucho más grave.",
+      "Cinco días después, el 2 de agosto, tuvimos que llamar nuevamente a PAMI. Mi tío estaba mucho peor. Tenía una infección en la pierna, y esa infección ya estaba en su sangre. Una infección que podría haber sido detenida si el derrame pleural hubiera sido tratado adecuadamente. Una infección que, por negligencia, se convirtió en sepsis.",
+      "Esa fue la primera mala praxis. Y llevó directamente a la segunda. Y la segunda lo llevó a la muerte."
+    ]
+  },
+  "conclusion": {
+    "text": [
+      "Uno quiere creer que los médicos se han formado para ayudar, para hacer el bien, para sanar al prójimo. Pero a veces, la negligencia, la indiferencia y la falta de compasión transforman una institución de salud en un lugar de tortura.",
+      "Si no tuviera buenos abogados, jamás habría descubierto que mi tío sufrió no una, sino dos malas praxis. Escalofriante, macabro y absolutamente deshumano…"
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 Testimonio de Aristovol Gomez | Clínica Urquiza - Medical Malpractice Documentation",
+    "note": "Este sitio documenta un caso de negligencia médica grave con fines educativos y de justicia."
+  }
+}
