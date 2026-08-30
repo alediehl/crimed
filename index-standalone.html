@@ -16,9 +16,11 @@
             --secondary-color: #d32f2f;
             --text-dark: #333;
             --text-light: #666;
-            --border-color: #e0e0e0;
-            --bg-light: #f9f9f9;
+            --border-color: #dfeaf8;
+            --bg-light: #f4f9ff;
             --accent-blue: #0066cc;
+            --submit-blue: #dfeeff;
+            --submit-blue-deep: #bfe0ff;
         }
 
         body {
@@ -60,6 +62,14 @@
             align-items: center;
             justify-content: space-between;
             gap: 1rem;
+            width: 100%;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .nav-group,
@@ -223,11 +233,12 @@
         }
 
         .submit-card {
-            background: var(--bg-light);
-            border: 1px solid var(--border-color);
+            background: linear-gradient(135deg, var(--submit-blue) 0%, #edf7ff 100%);
+            border: 1px solid var(--submit-blue-deep);
             border-radius: 8px;
             padding: 2rem;
             margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(57, 123, 196, 0.08);
         }
 
         .submit-card p {
@@ -357,11 +368,13 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="logo">Clínica Urquiza - Testimonio</div>
             <div class="header-controls">
-                <div class="nav-group">
-                    <button class="nav-btn active" data-tab="story">Story</button>
-                    <button class="nav-btn" data-tab="submit">Submit</button>
+                <div class="title-group">
+                    <div class="nav-group">
+                        <button class="nav-btn active" data-tab="story">Testimonios</button>
+                        <button class="nav-btn" data-tab="submit">Comentá</button>
+                    </div>
+                    <div class="logo">Clínica Urquiza - Testimonio</div>
                 </div>
                 <div class="language-selector">
                     <button class="lang-btn active" onclick="changeLanguage('es')">Español</button>
@@ -724,32 +737,32 @@
         <div class="container">
             <div class="content">
                 <div class="submit-card">
-                    <h2 class="section-title" data-i18n="submitTitle">Submit a testimony</h2>
-                    <p data-i18n="submitDescription">Share a story from someone who may have suffered something similar. This form helps document other experiences in a respectful and privacy-conscious way.</p>
+                    <h2 class="section-title" data-i18n="submitTitle">Contame tu historia</h2>
+                    <p data-i18n="submitDescription">Compartí la historia de alguien que pudo haber sufrido algo similar. Este formulario ayuda a documentar otras experiencias con respeto y cuidado.</p>
 
                     <form id="testimony-form" class="testimony-form">
                         <div>
-                            <label for="testimony-title" data-i18n="titleLabel">Title</label>
-                            <input id="testimony-title" type="text" placeholder="Title of the testimony" data-placeholder-key="titlePlaceholder">
+                            <label for="testimony-title" data-i18n="titleLabel">Título</label>
+                            <input id="testimony-title" type="text" placeholder="Título del testimonio" data-placeholder-key="titlePlaceholder">
                         </div>
 
                         <div>
-                            <label for="testimony-description" data-i18n="descriptionLabel">Description</label>
-                            <textarea id="testimony-description" placeholder="Describe what happened" data-placeholder-key="descriptionPlaceholder"></textarea>
+                            <label for="testimony-description" data-i18n="descriptionLabel">Descripción</label>
+                            <textarea id="testimony-description" placeholder="Describe lo que ocurrió" data-placeholder-key="descriptionPlaceholder"></textarea>
                         </div>
 
                         <div>
-                            <label for="testimony-images" data-i18n="imagesLabel">Images</label>
+                            <label for="testimony-images" data-i18n="imagesLabel">Imágenes</label>
                             <input id="testimony-images" type="file" accept="image/*" multiple>
                             <div id="image-preview" class="image-preview"></div>
                         </div>
 
-                        <button type="submit" data-i18n="submitButton">Submit testimony</button>
+                        <button type="submit" data-i18n="submitButton">Enviar testimonio</button>
                     </form>
                 </div>
 
                 <div class="submit-card">
-                    <h3 class="section-title" data-i18n="savedTitle">Submitted testimonies</h3>
+                    <h3 class="section-title" data-i18n="savedTitle">Testimonios enviados</h3>
                     <div id="saved-testimonies" class="saved-testimonies"></div>
                 </div>
             </div>
@@ -764,8 +777,8 @@
     <script>
         const translations = {
             es: {
-                submitTitle: 'Enviar un testimonio',
-                submitDescription: 'Comparte la historia de alguien que pudo haber sufrido algo similar. Este formulario ayuda a documentar otras experiencias con respeto y cuidado.',
+                submitTitle: 'Contame tu historia',
+                submitDescription: 'Compartí la historia de alguien que pudo haber sufrido algo similar. Este formulario ayuda a documentar otras experiencias con respeto y cuidado.',
                 titleLabel: 'Título',
                 descriptionLabel: 'Descripción',
                 imagesLabel: 'Imágenes',
@@ -776,7 +789,7 @@
                 descriptionPlaceholder: 'Describe lo que ocurrió y cómo afectó a la persona.'
             },
             en: {
-                submitTitle: 'Submit a testimony',
+                submitTitle: 'Tell us your story',
                 submitDescription: 'Share the story of someone who may have suffered something similar. This form helps document other experiences with respect and care.',
                 titleLabel: 'Title',
                 descriptionLabel: 'Description',
@@ -788,7 +801,7 @@
                 descriptionPlaceholder: 'Describe what happened and how it affected the person.'
             },
             de: {
-                submitTitle: 'Zeugnis einreichen',
+                submitTitle: 'Erzähl uns deine Geschichte',
                 submitDescription: 'Teilen Sie die Geschichte einer Person, die Ähnliches erlebt haben könnte. Dieses Formular hilft dabei, andere Erfahrungen respektvoll und sorgfältig zu dokumentieren.',
                 titleLabel: 'Titel',
                 descriptionLabel: 'Beschreibung',
