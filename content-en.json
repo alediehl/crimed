@@ -1,8 +1,15 @@
 {
   "hero": {
     "title": "Clínica Urquiza",
-    "subtitle": "Chronology of a Murder in 7 Days",
+    "subtitle": "Chronology of a Medical Crime in 7 Days",
     "description": "The testimony of a family that witnessed how medical negligence tortured and killed a good man, transforming trust in medicine into a war wound"
+  },
+  "truthAndJustice": {
+    "title": "Truth and Justice",
+    "content": [
+      "This page brings together the testimony of our family and the available documentation regarding the care received by Aristotle \"Aris\" Gómez at Clínica Urquiza.",
+      "The criminal case is characterized as involuntary manslaughter and is in the investigation stage. We ask that the responsibilities of each person and institution involved be determined with rigor."
+    ]
   },
   "introduction": {
     "text": [
@@ -58,7 +65,7 @@
     "warning": "NOTHING. ABSOLUTELY NOTHING.\n\nNo treatment was prescribed. No monitoring. They simply ignored it. They discharged him on July 28, 2026 with instructions to continue his base treatment: omeprazole, tramadol, and paracetamol….",
     "narrative": [
       "My uncle couldn't eat well. He couldn't sleep. He was visibly in poor condition. We could see it, even though we're not doctors. But Clínica Urquiza sent him home like that. Without monitoring. Without follow-up. Without treatment for that effusion that we now know was an early sign of something much more serious.",
-      "Five days later, on August 2, we had to call PAMI again. My uncle was much worse. He had an infection in his leg, and that infection was already in his bloodstream. An infection that could have been stopped if the pleural effusion had been treated properly. An infection that, through negligence, became sepsis.",
+      "Five days later, on August 2, we had to call PAMI again. My uncle was much worse. He had an infection in his leg, and that infection was already in his bloodstream. An infection that could have been stopped if it had been treated properly. An infection that, through negligence, became sepsis.",
       "That was the first malpractice. And it led directly to the second. And the second led to his death."
     ]
   },

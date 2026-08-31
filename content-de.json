@@ -1,8 +1,15 @@
 {
   "hero": {
     "title": "Clínica Urquiza",
-    "subtitle": "Chronologie eines Mordes in 7 Tagen",
+    "subtitle": "Chronologie eines ärztlichen Verbrechens in 7 Tagen",
     "description": "Das Zeugnis einer Familie, die beobachtete, wie medizinische Fahrlässigkeit einen guten Menschen folterte und tötete und das Vertrauen in die Medizin in eine Kriegsverletzung verwandelte"
+  },
+  "truthAndJustice": {
+    "title": "Wahrheit und Gerechtigkeit",
+    "content": [
+      "Diese Seite bringt das Zeugnis unserer Familie und die verfügbare Dokumentation über die Betreuung zusammen, die Aristóvol \"Aris\" Gómez in der Clínica Urquiza erhielt.",
+      "Der Straffall wird als fahrlässige Tötung charakterisiert und befindet sich im Ermittlungsstadium. Wir fordern, dass die Verantwortung jeder beteiligten Person und Institution mit Rigor bestimmt wird."
+    ]
   },
   "introduction": {
     "text": [
@@ -58,7 +65,7 @@
     "warning": "NICHTS. ABSOLUT NICHTS.\n\nEs wurde keine Behandlung verschrieben. Keine Überwachung. Sie ignorierten es einfach. Sie entließen ihn am 28. Juli 2026 mit der Anweisung, seine Basisbehandlung fortzusetzen: Omeprazol, Tramadol und Paracetamol….",
     "narrative": [
       "Mein Onkel konnte nicht gut essen. Er konnte nicht schlafen. Er war sichtlich in schlechtem Zustand. Wir konnten es sehen, obwohl wir keine Ärzte sind. Aber die Clínica Urquiza schickte ihn einfach nach Hause. Ohne Überwachung. Ohne Nachverfolgung. Ohne Behandlung für diesen Erguss, der sich später als frühes Zeichen von etwas viel Ernsthafterem herausstellte.",
-      "Fünf Tage später, am 2. August, mussten wir PAMI erneut anrufen. Meinem Onkel ging es viel schlechter. Er hatte eine Infektion im Bein, und diese Infektion war bereits in seinem Blutkreislauf. Eine Infektion, die hätte gestoppt werden können, wenn der Pleuraerguss angemessen behandelt worden wäre. Eine Infektion, die durch Fahrlässigkeit zu einer Sepsis wurde.",
+      "Fünf Tage später, am 2. August, mussten wir PAMI erneut anrufen. Meinem Onkel ging es viel schlechter. Er hatte eine Infektion im Bein, und diese Infektion war bereits in seinem Blutkreislauf. Eine Infektion, die hätte gestoppt werden können, wenn es angemessen behandelt worden wäre. Eine Infektion, die durch Fahrlässigkeit zu einer Sepsis wurde.",
       "Das war die erste Fahrlässigkeit. Und sie führte direkt zur zweiten. Und die zweite führte zu seinem Tod."
     ]
   },

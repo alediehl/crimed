@@ -1,8 +1,15 @@
 {
   "hero": {
     "title": "Clínica Urquiza",
-    "subtitle": "Cronología de un asesinato en 7 días",
+    "subtitle": "Cronología de un crimen médico en 7 días",
     "description": "El testimonio de una familia que presenció cómo la negligencia médica torturó y mató a un buen hombre transformando la confianza en la medicina en una una herida de guerra"
+  },
+  "truthAndJustice": {
+    "title": "Verdad y justicia",
+    "content": [
+      "Esta página reúne el testimonio de nuestra familia y la documentación disponible sobre la atención recibida por Aristóvol \"Aris\" Gómez en la Clínica Urquiza.",
+      "La causa penal está caratulada como homicidio culposo y se encuentra en etapa de investigación. Pedimos que se determinen con rigor las responsabilidades de cada persona e institución involucrada."
+    ]
   },
   "introduction": {
     "text": [
@@ -58,7 +65,7 @@
     "warning": "NADA. ABSOLUTAMENTE NADA.\n\nNo se prescribió tratamiento alguno. No se monitoreó. Simplemente lo ignoraron. Lo dieron de alta el 28 de julio de 2026 con instrucciones de que continuara su tratamiento base: omeprazol, tramadol, y paracetamol….",
     "narrative": [
       "Mi tío no podía comer bien. No podía dormir. Estaba visiblemente en malas condiciones. Nosotros podíamos verlo, aunque no somos médicos. Pero la Clínica Urquiza lo envió a casa así. Sin monitoreo. Sin seguimiento. Sin tratamiento para ese derrame que ahora sabemos era un signo temprano de algo mucho más grave.",
-      "Cinco días después, el 2 de agosto, tuvimos que llamar nuevamente a PAMI. Mi tío estaba mucho peor. Tenía una infección en la pierna, y esa infección ya estaba en su sangre. Una infección que podría haber sido detenida si el derrame pleural hubiera sido tratado adecuadamente. Una infección que, por negligencia, se convirtió en sepsis.",
+      "Cinco días después, el 2 de agosto, tuvimos que llamar nuevamente a PAMI. Mi tío estaba mucho peor. Tenía una infección en la pierna, y esa infección ya estaba en su sangre. Una infección que podría haber sido detenida si se hubiera sido tratado adecuadamente. Una infección que, por negligencia, se convirtió en sepsis.",
       "Esa fue la primera mala praxis. Y llevó directamente a la segunda. Y la segunda lo llevó a la muerte."
     ]
   },
