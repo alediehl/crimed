@@ -1,13 +1,13 @@
 {
   "hero": {
     "title": "Clínica Urquiza",
-    "subtitle": "Chronology of a Medical Crime in 7 Days",
-    "description": "The testimony of a family that witnessed how medical negligence tortured and killed a good man, transforming trust in medicine into a war wound"
+    "subtitle": "Chronology of a death and medical care under investigation",
+    "description": "The testimony of a family that witnessed how the life of a good man deteriorated day by day, transforming trust in medicine into a war wound"
   },
   "truthAndJustice": {
     "title": "Truth and Justice",
     "content": [
-      "This page brings together the testimony of our family and the available documentation regarding the care received by Aristotle \"Aris\" Gómez at Clínica Urquiza.",
+      "This page brings together the testimony of our family and the available documentation regarding the care received by Aristóvol \"Uncle Aris\" Gómez at Clínica Urquiza.",
       "The criminal case is characterized as involuntary manslaughter and is in the investigation stage. We ask that the responsibilities of each person and institution involved be determined with rigor."
     ]
   },
@@ -15,7 +15,7 @@
     "text": [
       "There is a before and after to seeing someone tortured and killed in front of your eyes. Especially if it's family. That before and after happened to me. This is my testimony.",
       "My uncle Aris was a person full of energy and eager to live. Unfortunately, on June 1 he had a traffic accident that brought him to Clínica Urquiza. He didn't suffer any fractures, thank God; he had only injured his right leg near the knee.",
-      "What would follow after that initial accident would be a cascade of negligent medical decisions that would culminate in my uncle's death. And it all began when the doctors at Clínica Urquiza decided not to treat a serious complication that they had already identified."
+      "What would follow after that initial accident would be a cascade of negligent medical decisions before our eyes that would culminate in my uncle's death. And it all began when the doctors at Clínica Urquiza decided not to treat a serious complication that they had already identified."
     ]
   },
   "secondMalpractice": {
@@ -27,34 +27,34 @@
       },
       {
         "date": "Monday 03/08",
-        "content": "We waited while observing that the infection kept rising up his left leg, always informed by Dr. Dario Castro (in charge of the floor that week) that it was a circulatory problem."
+        "content": "We waited while observing that the condition kept rising up his left leg, becoming increasingly purple, but the doctor on duty in charge of the floor that week told us it was a circulatory problem."
       },
       {
-        "date": "Tuesday",
+        "date": "Tuesday 04/08",
         "content": "We waited…"
       },
       {
-        "date": "Wednesday",
-        "content": "They performed the angiogram in the afternoon. Dr. Pedro Cepa told us that my uncle was in delicate condition and that the surgeon would speak with us the next day to determine the steps to take."
+        "date": "Wednesday 05/08",
+        "content": "They performed the angiogram in the afternoon. The night-shift doctor informed us that the angiogram went well and that we had to wait for the surgeon to tell us the next steps. He also informed us that my uncle was in critical condition and that the surgeon would speak with us the next day."
       },
       {
-        "date": "Thursday",
-        "content": "At the end of the afternoon the surgeon came and informed us that the leg had to be amputated. BUT, suspiciously, he told us they only operate on Mondays or Wednesdays.\n\nMy doubts begin… They took three days to perform an angiogram and then told us that \"the leg was already lost, that there was nothing to do, and that it had to be amputated,\" in the words of the floor doctor himself, that same Thursday morning, Dr. Dario Castro.\n\nIf it's an emergency, why don't they operate immediately?"
+        "date": "Thursday 06/08",
+        "content": "That morning, the floor doctor informed us that \"the leg was already lost, that there was nothing to do, and that it had to be amputated,\" in his own words. At the end of Thursday afternoon, the surgeon came and informed us that the foot had to be amputated. BUT, suspiciously, he told us they only operate on Mondays or Wednesdays. If it's an emergency, why don't they operate immediately?\n\nMy doubts begin…"
       },
       {
-        "date": "Friday",
-        "content": "Early in the morning I pushed for them to operate right away, with lawyers and pressuring the clinic's chiefs. They finally operated that day and amputated the leg. With all the pain that meant for the patient, my uncle, but also for us a hope of stopping the necrosis and beginning the painful and difficult recovery process."
+        "date": "Friday 07/08",
+        "content": "Early in the morning I contacted a lawyer who specialized in the matter, and we pressured them to operate immediately, with lawyers and constant conversations with the clinic's chiefs and medical chief. They finally operated that day and amputated the leg. With all the pain that meant for my uncle, we naively thought there was hope of stopping the necrosis and beginning the painful and difficult recovery process."
       },
       {
-        "date": "Saturday",
-        "content": "The doctor changes. That was the moment of truth.\n\nWe noticed that the fingers of his hand were also turning black, and the sole of his other foot.\n\nSo I confronted the new doctor on duty, Dr. Daniel Galeano, asking them to help my uncle immediately, to give him anticoagulants because \"the circulatory problem\" kept advancing, that we had brought in lawyers and demanded the best treatment for him… Too late.\n\nThe confession: \"There's nothing to do. He has a blood infection and it's already very advanced; it must have compromised other organs. We sent for an antibiogram, but until we know for sure which bacteria it is, we have to treat him with general antibiotics\".\n\nWhat? I froze. I called my lawyer and he said: MALPRACTICE.\n\nBut in my heart only a death sentence echoed. How could they be so cruel as to amputate his leg knowing they had already sentenced him to death? They didn't even administer painkillers on time; my uncle screamed in pain, he was agitated… he spent the whole night like that."
+        "date": "Saturday 08/08",
+        "content": "THE DOCTOR CHANGES. That was the moment of truth.\n\nWe noticed that the fingers of his hand were also turning black, and the sole of his other foot.\n\nSo I confronted the new doctor on duty, asking them to help my uncle immediately, to give him anticoagulants because \"the circulatory problem\" kept advancing, that we had brought in lawyers and demanded the best treatment for him… Too late.\n\nThe confession: \"There's nothing to do. He has a blood infection and it's already very advanced; it must have compromised other organs. We sent for an antibiogram, but until we know for sure which bacteria it is, we have to treat him with general antibiotics\".\n\nWhat? I froze. I called my lawyer and he said: MALPRACTICE.\n\nBut in my heart only a death sentence echoed. How could they be so cruel as to amputate his leg knowing they had already sentenced him to death? They didn't even administer painkillers on time; my uncle screamed in pain, he was agitated… he spent the whole night like that. It is incomprehensible! If it was an infection, why wasn't he treated sooner? Why didn't they identify the bacteria and give him the appropriate antibiotic? Why wasn't he treated before amputating his leg? Why wasn't he treated before his toes turned black? Why did they amputate him?"
       },
       {
         "date": "Sunday 09/08",
-        "content": "My uncle spent the whole night screaming in pain, tearing out his IV lines, his diaper… so they decided to tie him down. So much torture, so much lack of compassion.\n\nI complained again to Dr. Daniel Galeano so they would administer the necessary painkillers; he went to see him, made no changes, and told me: \"There's nothing more to do.\"\n\nMy uncle Aris died of general sepsis, after seven days hospitalized."
+        "content": "My uncle spent the whole night screaming in pain, tearing out his IV lines, his diaper… so they decided to tie him down. So much torture, so much lack of compassion.\n\nI complained again to the weekend on-call doctor so they would administer the necessary painkillers; he went to see him, made no changes, and told me: \"There's nothing more to do.\"\n\nMy uncle Aris died of general sepsis, after seven days hospitalized."
       }
     ],
-    "warning": "The reality: It seems like a horror movie, but it happened to me, and I still cannot process it. The collusion of doctors who do not practice their profession with the meticulousness and attention that the fragility of a life deserves and must be honored, and of nurses who do not do their job well (there were many complaints during the time my uncle was hospitalized), who do not give you their names or surnames, nor inform you correctly \"to cover themselves\" from whatever may happen, is indescribable."
+    "warning": "The reality: It seems like a horror movie, but it happened to me, and I still cannot process it. It is indescribable how people's lives pass through those clinic beds without receiving appropriate care or attention to the fragility of a life, which deserves meticulous care and must be honored. Patients complained about nurses who did not change diapers on time and left critical patients waiting for hours. When you complain, they do not give you their names or surnames, and the doctors do not inform you correctly; it seems they make everything so confusing… \"to cover themselves\" from whatever may happen."
   },
   "firstMalpractice": {
     "title": "The Abandonment: It Was Not Just One Malpractice, It Was Two",
@@ -62,21 +62,21 @@
       "The problems began before we reached that fatal week in August. My uncle was admitted on July 23 due to severe stomach pain. He had eaten something that upset him, and given that he had a large tumor in his stomach (undetermined type), the best course was to keep him under observation to be safe.",
       "During that hospitalization, they performed a chest CT scan. And here is where the incomprehensible happened: they identified Bilateral Pleural Effusion in his left lung. A serious problem that required immediate medical attention… but what did the doctors do about it?"
     ],
-    "warning": "NOTHING. ABSOLUTELY NOTHING.\n\nNo treatment was prescribed. No monitoring. They simply ignored it. They discharged him on July 28, 2026 with instructions to continue his base treatment: omeprazole, tramadol, and paracetamol….",
+    "warning": "They discharged him on July 28, 2026 with instructions to continue his base treatment: omeprazole, tramadol, and paracetamol.…",
     "narrative": [
-      "My uncle couldn't eat well. He couldn't sleep. He was visibly in poor condition. We could see it, even though we're not doctors. But Clínica Urquiza sent him home like that. Without monitoring. Without follow-up. Without treatment for that effusion that we now know was an early sign of something much more serious.",
-      "Five days later, on August 2, we had to call PAMI again. My uncle was much worse. He had an infection in his leg, and that infection was already in his bloodstream. An infection that could have been stopped if it had been treated properly. An infection that, through negligence, became sepsis.",
+      "My uncle couldn't eat well. He couldn't sleep. He was visibly in poor condition. We noticed his deterioration, even though we're not doctors. But Clínica Urquiza sent him home like that, and he returned to the clinic five days later in a much more serious condition.",
+      "Five days later, on August 2, we had to call PAMI again. My uncle was much worse. He had an infection in his leg, and that infection was already in his bloodstream. An infection that could have been stopped if it had been treated properly. An infection that became sepsis and then an inevitable death.",
       "That was the first malpractice. And it led directly to the second. And the second led to his death."
     ]
   },
   "conclusion": {
     "text": [
-      "You want to believe that doctors have been trained to help, to do good, to heal your neighbor. But sometimes, negligence, indifference, and lack of compassion transform a health institution into a place of torture.",
-      "If I didn't have good lawyers, I never would have discovered that my uncle suffered not one, but two instances of medical malpractice. Chilling, macabre, and absolutely inhuman…"
+      "You want to believe that doctors have been trained to help, to do good, to heal your neighbor. But sometimes negligence, indifference, and lack of compassion turn a health institution into a place of torture.",
+      "If I didn't have good lawyers, I never would have discovered what my uncle suffered. Chilling, macabre, and absolutely inhuman…"
     ]
   },
   "footer": {
     "copyright": "© 2026 Testimony of Aristovol Gomez | Clínica Urquiza - Medical Malpractice Documentation",
-    "note": "This site documents a case of serious medical negligence for educational and justice purposes."
+    "note": "This site documents a case of serious medical negligence for informational and justice purposes."
   }
 }

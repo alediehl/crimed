@@ -16,9 +16,11 @@
             --secondary-color: #d32f2f;
             --text-dark: #333;
             --text-light: #666;
-            --border-color: #e0e0e0;
-            --bg-light: #f9f9f9;
+            --border-color: #dfeaf8;
+            --bg-light: #f4f9ff;
             --accent-blue: #0066cc;
+            --submit-blue: #dfeeff;
+            --submit-blue-deep: #bfe0ff;
         }
 
         body {
@@ -55,11 +57,30 @@
             color: white;
         }
 
+        .header-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .title-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-group,
         .language-selector {
             display: flex;
             gap: 0.5rem;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
+        .nav-btn,
         .lang-btn {
             background: transparent;
             border: 2px solid white;
@@ -71,11 +92,13 @@
             border-radius: 4px;
         }
 
+        .nav-btn.active,
         .lang-btn.active {
             background-color: var(--secondary-color);
             border-color: var(--secondary-color);
         }
 
+        .nav-btn:hover,
         .lang-btn:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
@@ -107,6 +130,19 @@
             opacity: 0.95;
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        .hero .highlighted-subtitle {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.45rem 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            background-color: rgba(255, 255, 255, 0.12);
+            font-weight: 700;
+        }
+
+        .hero .hero-description {
+            margin-top: 1rem;
         }
 
         /* Content Sections */
@@ -199,12 +235,120 @@
         }
 
         /* Language content */
-        .content-block {
+        .content-block,
+        .tab-panel {
             display: none;
         }
 
-        .content-block.active {
+        .content-block.active,
+        .tab-panel.active {
             display: block;
+        }
+
+        #story-content {
+            display: block;
+        }
+
+        .submit-card {
+            background: linear-gradient(135deg, var(--submit-blue) 0%, #edf7ff 100%);
+            border: 1px solid var(--submit-blue-deep);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(57, 123, 196, 0.08);
+        }
+
+        .submit-card p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .testimony-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .testimony-form label {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .testimony-form input,
+        .testimony-form textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font: inherit;
+            background: white;
+        }
+
+        .testimony-form textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .testimony-form button {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 0.9rem 1.5rem;
+            cursor: pointer;
+            font-weight: 700;
+            width: fit-content;
+        }
+
+        .image-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .image-preview img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .saved-testimonies {
+            margin-top: 2rem;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .saved-entry {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.2rem;
+        }
+
+        .saved-entry h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .saved-entry p {
+            margin: 0.5rem 0;
+            color: var(--text-dark);
+        }
+
+        .saved-entry .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+
+        .saved-entry .gallery img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 6px;
         }
 
         /* Footer */
@@ -241,48 +385,498 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="logo">Clínica Urquiza - Testimonio</div>
-            <div class="language-selector">
-                <button class="lang-btn active" onclick="changeLanguage('es')">Español</button>
-                <button class="lang-btn" onclick="changeLanguage('en')">English</button>
-                <button class="lang-btn" onclick="changeLanguage('de')">Deutsch</button>
+            <div class="header-controls">
+                <div class="title-group">
+                    <div class="nav-group">
+                        <button class="nav-btn active" data-tab="story">Testimonios</button>
+                        <button class="nav-btn" data-tab="submit">Comentá</button>
+                    </div>
+                    <div class="logo">Clínica Urquiza - Testimonio</div>
+                </div>
+                <div class="language-selector">
+                    <button class="lang-btn active" onclick="changeLanguage('es')">Español</button>
+                    <button class="lang-btn" onclick="changeLanguage('en')">English</button>
+                    <button class="lang-btn" onclick="changeLanguage('de')">Deutsch</button>
+                    <button class="lang-btn" onclick="changeLanguage('da')">Dansk</button>
+                </div>
             </div>
         </div>
     </header>
 
+    <div id="story-content"></div>
+
     <!-- SPANISH VERSION -->
     <div id="spanish" class="content-block active">
         <div class="hero">
-            <h1 id="hero-title-es"></h1>
-            <p class="subtitle" id="hero-desc-es"></p>
+            <h1>Clínica Urquiza<br>Cronología de un crimen médico en 7 días</h1>
+            <p class="subtitle">El testimonio de una familia que presenció cómo la negligencia médica torturó y mató a un buen hombre transformando la confianza en la medicina en una una herida de guerra</p>
         </div>
 
         <div class="container">
-            <div class="content" id="content-es"></div>
+            <div class="content">
+                <section class="highlight-box">
+                    <h2 class="section-title">Verdad y justicia</h2>
+                    <p>Esta página reúne el testimonio de nuestra familia y la documentación disponible sobre la atención recibida por Aristóvol “Aris” Gómez en la Clínica Urquiza.</p>
+                    <p>La causa penal está caratulada como <strong>homicidio culposo</strong> y se encuentra en etapa de investigación. Pedimos que se determinen con rigor las responsabilidades de cada persona e institución involucrada.</p>
+                </section>
+
+                <h2 class="section-title">Mala Praxis: Un Calvario en 7 Días</h2>
+
+                <div class="narrative-section">
+                    <p>Hay un antes y un después de ver a alguien torturado y asesinado delante de tus ojos. Especialmente si es familia. Ese antes y después nos tocó a mí. Este es mi testimonio.</p>
+                    <p>Mi tío Aris era una persona llena de energía y con muchas ganas de vivir. Lamentablemente, el 1 de junio tuvo un accidente de tránsito que lo llevó a la Clínica Urquiza. No tuvo ninguna fractura, gracias a Dios; solo se había lastimado la pierna derecha cerca de la rodilla.</p>
+                    <p>Lo que seguiría después de ese accidente inicial sería una cascada de decisiones médicas negligentes que culminarían en la muerte de mi tío. Y todo comenzó cuando los médicos de la Clínica Urquiza decidieron no tratar una complicación seria que ya habían identificado.</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Domingo 02/08</div>
+                        <div class="timeline-content">
+                            <p>Notamos que mi tío tenía el pie y la pantorrilla morados y fríos. Llamamos al PAMI (servicio de ambulancia). La ambulancia llegó a las 17 horas al domicilio. Fuimos directo a la Clínica Urquiza y a las 20 horas aproximadamente le dieron el alta de internación para estudiar los motivos de su sintomatología.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Lunes 03/08</div>
+                        <div class="timeline-content">
+                            <p>Esperamos mientras observábamos que la infección seguía subiendo por la pierna izquierda, siempre informados por el Dr. Dario Castro (a cargo del piso esa semana) de que se trataba de un problema circulatorio.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Martes</div>
+                        <div class="timeline-content">
+                            <p>Esperamos…</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Miércoles</div>
+                        <div class="timeline-content">
+                            <p>Le hacen el angiograma por la tarde. El Dr. Pedro Cepa ya nos dice que mi tío se encontraba delicado y que al día siguiente hablaría con nosotros el cirujano para determinar los pasos a seguir.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jueves</div>
+                        <div class="timeline-content">
+                            <p>Al finalizar la tarde viene el cirujano y nos informa que hay que amputar. PERO (sospechosamente), nos comunica que solo operan los lunes o miércoles.</p>
+                            <p><strong>Empiezan mis dudas…</strong> Tardaron tres días en hacerle un angiograma y luego nos informaron que "la pierna ya estaba perdida, que no había nada que hacer, y que había que amputar", en palabras propias del médico de piso, mismo día Jueves por la mañana, Dr. Dario Castro.</p>
+                            <p>Si es una urgencia, ¿por qué no operan inmediatamente?</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Viernes</div>
+                        <div class="timeline-content">
+                            <p>A primera hora presioné para que hicieran la operación de inmediato, con abogados y apurando a los jefes de la clínica. Finalmente LO OPERARON EN EL DIA y le amputaron la pierna. Con todo el dolor que eso significó para el paciente, mi tío, pero también para nosotros una esperanza de detener la necrosis y comenzar el penoso y doloroso proceso de recuperación.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Sábado</div>
+                        <div class="timeline-content">
+                            <p><strong>CAMBIA EL MEDICO. Esa fue la hora de la verdad.</strong></p>
+                            <p>Notamos que los dedos de la mano también se estaban poniendo negros, y la planta del otro pie.</p>
+                            <p>Entonces le reclamo al nuevo médico de turno, el Dr. Daniel Galeano, para que ayuden a mi tío de inmediato, que le den anticoagulantes porque "el problema circulatorio" seguía avanzando, que habíamos puesto abogados y exigíamos el mejor tratamiento para él… Demasiado tarde.</p>
+                            <div class="highlight-box">
+                                <p><strong>La confesión:</strong> "No hay nada que hacer. Tiene una infección en la sangre y ya está muy avanzada; debe haber comprometido otros órganos. Mandamos a hacer un antibiograma, pero hasta saber con certeza qué bacteria es, tenemos que tratarlo con antibióticos generales".</p>
+                            </div>
+                            <p>¿Cómo? Me quedé helada. Llamé a mi abogado y me dijo: <strong>MALA PRAXIS.</strong></p>
+                            <p>Pero en mi corazón solo resonó una sentencia de muerte. ¿Cómo pudieron ser tan crueles de amputarle la pierna sabiendo que ya lo habían sentenciado a muerte? Tampoco le administraban los calmantes a tiempo; mi tío gritaba de dolor, se agitaba… pasó así toda la noche.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Domingo 09/08</div>
+                        <div class="timeline-content">
+                            <p>Mi tío pasó toda la noche gritando de dolor, se arrancaba las vías, el pañal… entonces decidieron atarlo. Cuánta tortura, cuánta falta de compasión.</p>
+                            <p>Me quejo de nuevo con el Dr. Daniel Galeano para que le administren los calmantes necesarios, va a verlo, no hizo ningún cambio, y me dice… "ya no hay nada que hacer".</p>
+                            <p><strong>Mi tío Aris muere de sepsis general, después de siete días internado.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>La realidad:</strong> Parece una película de terror, pero me pasó a mí, y todavía no puedo procesarlo. Es inenarrable la connivencia de doctores que no ejercen su profesión con la meticulosidad y el detalle que la delicadeza de una vida amerita y debe ser honrada, y de enfermeras que no hacen bien su trabajo (hubo muchas quejas durante el tiempo que mi tío estuvo internado), que no te dan sus nombres, ni sus apellidos, ni te informan correctamente "para cubrirse" de lo que pueda pasar.</p>
+                </div>
+
+                <h2 class="section-title">El Abandono: No fue sólo una mala praxis, fueron dos</h2>
+                
+                <div class="narrative-section">
+                    <p>Los problemas comenzaron antes de que llegáramos a esa semana fatal de agosto. Mi tío fue internado el 23 de julio por un dolor de estómago muy fuerte. Había comido algo que le hizo mal, y dado que tenía un tumor grande en el estómago (indeterminado de qué tipo), lo mejor era dejarlo en observación para estar seguro.</p>
+                    <p>Durante esa internación, le realizaron un TAC de tórax. Y aquí es donde sucedió lo incomprehensible: identificaron un derrame Pleural Bilateral en el pulmón izquierdo. Un problema serio que requería atención médica inmediata… pero ¿qué hicieron los médicos al respecto?</p>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>NADA. ABSOLUTAMENTE NADA.</strong></p>
+                    <p>No se prescribió tratamiento alguno. No se monitoreó. Simplemente lo ignoraron. Lo dieron de alta el 28 de julio de 2026 con instrucciones de que continuara su tratamiento base: omeprazol, tramadol, y paracetamol….</p>
+                </div>
+
+                <div class="narrative-section">
+                    <p>Mi tío no podía comer bien. No podía dormir. Estaba visiblemente en malas condiciones. Nosotros podíamos verlo, aunque no somos médicos. Pero la Clínica Urquiza lo envió a casa así. Sin monitoreo. Sin seguimiento. Sin tratamiento para ese derrame que ahora sabemos era un signo temprano de algo mucho más grave.</p>
+                    <p>Cinco días después, el 2 de agosto, tuvimos que llamar nuevamente a PAMI. Mi tío estaba mucho peor. Tenía una infección en la pierna, y esa infección ya estaba en su sangre. Una infección que podría haber sido detenida si se hubiera sido tratado adecuadamente. Una infección que, por negligencia, se convirtió en sepsis.</p>
+                    <p>Esa fue la primera mala praxis. Y llevó directamente a la segunda. Y la segunda lo llevó a la muerte.</p>
+                </div>
+
+                <section class="narrative-section">
+                    <p>Uno quiere creer que los médicos se han formado para ayudar, para hacer el bien, para sanar al prójimo. Pero a veces, la negligencia, la indiferencia y la falta de compasión transforman una institución de salud en un lugar de tortura.</p>
+                    <p>Si no tuviera buenos abogados, jamás habría descubierto que mi tío sufrió no una, sino dos malas praxis. Escalofriante, macabro y absolutamente deshumano…</p>
+                </section>
+            </div>
         </div>
     </div>
 
     <!-- ENGLISH VERSION -->
     <div id="english" class="content-block">
         <div class="hero">
-            <h1 id="hero-title-en"></h1>
-            <p class="subtitle" id="hero-desc-en"></p>
+            <h1>Clínica Urquiza<br>Chronology of a Medical Crime in 7 Days</h1>
+            <p class="subtitle">The testimony of a family that witnessed how medical negligence tortured and killed a good man, transforming trust in medicine into a war wound</p>
         </div>
 
         <div class="container">
-            <div class="content" id="content-en"></div>
+            <div class="content">
+                <section class="highlight-box">
+                    <h2 class="section-title">Truth and Justice</h2>
+                    <p>This page brings together the testimony of our family and the available documentation regarding the care received by Aristotle "Aris" Gómez at Clínica Urquiza.</p>
+                    <p>The criminal case is characterized as <strong>involuntary manslaughter</strong> and is in the investigation stage. We ask that the responsibilities of each person and institution involved be determined with rigor.</p>
+                </section>
+
+                <h2 class="section-title">Medical Malpractice: A Calvary in 7 Days</h2>
+
+                <div class="narrative-section">
+                    <p>There is a before and after to seeing someone tortured and killed in front of your eyes. Especially if it's family. That before and after happened to me. This is my testimony.</p>
+                    <p>My uncle Aris was a person full of energy and eager to live. Unfortunately, on June 1 he had a traffic accident that brought him to Clínica Urquiza. He didn't suffer any fractures, thank God; he had only injured his right leg near the knee.</p>
+                    <p>What would follow after that initial accident would be a cascade of negligent medical decisions that would culminate in my uncle's death. And it all began when the doctors at Clínica Urquiza decided not to treat a serious complication that they had already identified.</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Sunday 02/08</div>
+                        <div class="timeline-content">
+                            <p>We noticed my uncle's foot and calf were purple and cold. We called PAMI (ambulance service). The ambulance arrived at his home at 5 p.m. We went straight to Clínica Urquiza, and at around 8 p.m. they admitted him for hospitalization to study the causes of his symptoms.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Monday 03/08</div>
+                        <div class="timeline-content">
+                            <p>We waited while observing that the infection kept rising up his left leg, always informed by Dr. Dario Castro (in charge of the floor that week) that it was a circulatory problem.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Tuesday</div>
+                        <div class="timeline-content">
+                            <p>We waited…</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Wednesday</div>
+                        <div class="timeline-content">
+                            <p>They performed the angiogram in the afternoon. Dr. Pedro Cepa told us that my uncle was in delicate condition and that the surgeon would speak with us the next day to determine the steps to take.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Thursday</div>
+                        <div class="timeline-content">
+                            <p>At the end of the afternoon the surgeon came and informed us that the leg had to be amputated. BUT, suspiciously, he told us they only operate on Mondays or Wednesdays.</p>
+                            <p><strong>My doubts begin…</strong> They took three days to perform an angiogram and then told us that "the leg was already lost, that there was nothing to do, and that it had to be amputated," in the words of the floor doctor himself, that same Thursday morning, Dr. Dario Castro.</p>
+                            <p>If it's an emergency, why don't they operate immediately?</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Friday</div>
+                        <div class="timeline-content">
+                            <p>Early in the morning I pushed for them to operate right away, with lawyers and pressuring the clinic's chiefs. They finally operated that day and amputated the leg. With all the pain that meant for the patient, my uncle, but also for us a hope of stopping the necrosis and beginning the painful and difficult recovery process.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Saturday</div>
+                        <div class="timeline-content">
+                            <p><strong>The doctor changes. That was the moment of truth.</strong></p>
+                            <p>We noticed that the fingers of his hand were also turning black, and the sole of his other foot.</p>
+                            <p>So I confronted the new doctor on duty, Dr. Daniel Galeano, asking them to help my uncle immediately, to give him anticoagulants because "the circulatory problem" kept advancing, that we had brought in lawyers and demanded the best treatment for him… Too late.</p>
+                            <div class="highlight-box">
+                                <p><strong>The confession:</strong> "There's nothing to do. He has a blood infection and it's already very advanced; it must have compromised other organs. We sent for an antibiogram, but until we know for sure which bacteria it is, we have to treat him with general antibiotics".</p>
+                            </div>
+                            <p>What? I froze. I called my lawyer and he said: <strong>MALPRACTICE.</strong></p>
+                            <p>But in my heart only a death sentence echoed. How could they be so cruel as to amputate his leg knowing they had already sentenced him to death? They didn't even administer painkillers on time; my uncle screamed in pain, he was agitated… he spent the whole night like that.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Sunday 09/08</div>
+                        <div class="timeline-content">
+                            <p>My uncle spent the whole night screaming in pain, tearing out his IV lines, his diaper… so they decided to tie him down. So much torture, so much lack of compassion.</p>
+                            <p>I complained again to Dr. Daniel Galeano so they would administer the necessary painkillers; he went to see him, made no changes, and told me: "There's nothing more to do."</p>
+                            <p><strong>My uncle Aris died of general sepsis, after seven days hospitalized.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>The reality:</strong> It seems like a horror movie, but it happened to me, and I still cannot process it. The collusion of doctors who do not practice their profession with the meticulousness and attention that the fragility of a life deserves and must be honored, and of nurses who do not do their job well (there were many complaints during the time my uncle was hospitalized), who do not give you their names or surnames, nor inform you correctly "to cover themselves" from whatever may happen, is indescribable.</p>
+                </div>
+
+                <h2 class="section-title">The Abandonment: It Was Not Just One Malpractice, It Was Two</h2>
+
+                <div class="narrative-section">
+                    <p>The problems began before we reached that fatal week in August. My uncle was admitted on July 23 due to severe stomach pain. He had eaten something that upset him, and given that he had a large tumor in his stomach (undetermined type), the best course was to keep him under observation to be safe.</p>
+                    <p>During that hospitalization, they performed a chest CT scan. And here is where the incomprehensible happened: they identified Bilateral Pleural Effusion in his left lung. A serious problem that required immediate medical attention… but what did the doctors do about it?</p>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>NOTHING. ABSOLUTELY NOTHING.</strong></p>
+                    <p>No treatment was prescribed. No monitoring. They simply ignored it. They discharged him on July 28, 2026 with instructions to continue his base treatment: omeprazole, tramadol, and paracetamol….</p>
+                </div>
+
+                <div class="narrative-section">
+                    <p>My uncle couldn't eat well. He couldn't sleep. He was visibly in poor condition. We could see it, even though we're not doctors. But Clínica Urquiza sent him home like that. Without monitoring. Without follow-up. Without treatment for that effusion that we now know was an early sign of something much more serious.</p>
+                    <p>Five days later, on August 2, we had to call PAMI again. My uncle was much worse. He had an infection in his leg, and that infection was already in his bloodstream. An infection that could have been stopped if it had been treated properly. An infection that, through negligence, became sepsis.</p>
+                    <p>That was the first malpractice. And it led directly to the second. And the second led to his death.</p>
+                </div>
+
+                <section class="narrative-section">
+                    <p>You want to believe that doctors have been trained to help, to do good, to heal your neighbor. But sometimes, negligence, indifference, and lack of compassion transform a health institution into a place of torture.</p>
+                    <p>If I didn't have good lawyers, I never would have discovered that my uncle suffered not one, but two instances of medical malpractice. Chilling, macabre, and absolutely inhuman…</p>
+                </section>
+            </div>
         </div>
     </div>
 
     <!-- GERMAN VERSION -->
     <div id="german" class="content-block">
         <div class="hero">
-            <h1 id="hero-title-de"></h1>
-            <p class="subtitle" id="hero-desc-de"></p>
+            <h1>Clínica Urquiza<br>Chronologie eines ärztlichen Verbrechens in 7 Tagen</h1>
+            <p class="subtitle">Das Zeugnis einer Familie, die beobachtete, wie medizinische Fahrlässigkeit einen guten Menschen folterte und tötete und das Vertrauen in die Medizin in eine Kriegsverletzung verwandelte</p>
         </div>
 
         <div class="container">
-            <div class="content" id="content-de"></div>
+            <div class="content">
+                <section class="highlight-box">
+                    <h2 class="section-title">Wahrheit und Gerechtigkeit</h2>
+                    <p>Diese Seite bringt das Zeugnis unserer Familie und die verfügbare Dokumentation über die Betreuung zusammen, die Aristóvol "Aris" Gómez in der Clínica Urquiza erhielt.</p>
+                    <p>Der Straffall wird als <strong>fahrlässige Tötung</strong> charakterisiert und befindet sich im Ermittlungsstadium. Wir fordern, dass die Verantwortung jeder beteiligten Person und Institution mit Rigor bestimmt wird.</p>
+                </section>
+
+                <h2 class="section-title">Medizinische Fahrlässigkeit: Ein Leidensweg in 7 Tagen</h2>
+
+                <div class="narrative-section">
+                    <p>Es gibt ein Davor und ein Danach, wenn man sieht, wie jemand vor den eigenen Augen gefoltert und getötet wird. Besonders wenn es Familie ist. Dieses Davor und Danach hat mich getroffen. Dies ist mein Zeugnis.</p>
+                    <p>Mein Onkel Aris war ein Mensch voller Energie und Lebensfreude. Leider hatte er am 1. Juni einen Verkehrsunfall, der ihn in die Clínica Urquiza brachte. Er erlitt keine Frakturen, Gott sei Dank; er hatte sich nur am rechten Bein in der Nähe des Knies verletzt.</p>
+                    <p>Das, was nach diesem anfänglichen Unfall folgte, war eine Kaskade fahrlässiger medizinischer Entscheidungen, die zum Tode meines Onkels führen würde. Und alles begann, als die Ärzte der Clínica Urquiza beschlossen, eine schwerwiegende Komplikation nicht zu behandeln, die sie bereits identifiziert hatten.</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Sonntag 02/08</div>
+                        <div class="timeline-content">
+                            <p>Wir bemerkten, dass der Fuß und die Wade meines Onkels lila und kalt waren. Wir riefen PAMI (Rettungsdienst) an. Der Krankenwagen traf um 17 Uhr im Haus meines Onkels ein. Wir fuhren direkt zur Clínica Urquiza, und gegen 20 Uhr wurde er zur stationären Aufnahme eingeliefert, um die Ursachen seiner Symptome zu untersuchen.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Montag 03/08</div>
+                        <div class="timeline-content">
+                            <p>Wir warteten, während wir beobachteten, dass die Infektion weiter sein linkes Bein hinaufstieg, und wurden vom Dr. Dario Castro (in dieser Woche für die Station verantwortlich) stets darüber informiert, dass es sich um ein Kreislaufproblem handele.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Dienstag</div>
+                        <div class="timeline-content">
+                            <p>Wir warteten…</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Mittwoch</div>
+                        <div class="timeline-content">
+                            <p>Am Nachmittag wurde ein Angiogramm durchgeführt. Dr. Pedro Cepa teilte uns mit, dass mein Onkel in einem delikaten Zustand war und dass der Chirurg am nächsten Tag mit uns sprechen würde, um die nächsten Schritte zu bestimmen.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Donnerstag</div>
+                        <div class="timeline-content">
+                            <p>Am späten Nachmittag kam der Chirurg und teilte uns mit, dass das Bein amputiert werden müsse. ABER, verdächtig, sagte er uns, dass sie nur montags oder mittwochs operieren.</p>
+                            <p><strong>Meine Zweifel beginnen…</strong> Sie brauchten drei Tage, um ein Angiogramm durchzuführen, und sagten uns dann, „das Bein sei bereits verloren, es gebe nichts zu tun, und es müsse amputiert werden", in den Worten des Stationsarztes selbst, am selben Donnerstagmorgen, Dr. Dario Castro.</p>
+                            <p>Wenn es ein Notfall ist, warum operieren sie nicht sofort?</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Freitag</div>
+                        <div class="timeline-content">
+                            <p>Früh am Morgen drängte ich darauf, dass sie sofort operieren, mit Anwälten und Druck auf die Klinikleitung. Schließlich operierten sie an diesem Tag und amputierten das Bein. Mit all dem Schmerz, den das für den Patienten, meinen Onkel, bedeutete, aber auch für uns die Hoffnung, die Nekrose zu stoppen und den schmerzhaften und schwierigen Genesungsprozess zu beginnen.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Samstag</div>
+                        <div class="timeline-content">
+                            <p><strong>Der Arzt wechselt. Das war der Moment der Wahrheit.</strong></p>
+                            <p>Wir bemerkten, dass auch die Finger seiner Hand schwarz wurden und die Fußsohle seines anderen Fußes.</p>
+                            <p>Also konfrontierte ich den neuen diensthabenden Arzt, Dr. Daniel Galeano, und bat ihn, meinem Onkel sofort zu helfen, ihm Antikoagulanzien zu geben, weil „das Kreislaufproblem" weiter fortschritt, dass wir Anwälte eingeschaltet hatten und die beste Behandlung für ihn verlangten… Zu spät.</p>
+                            <div class="highlight-box">
+                                <p><strong>Das Geständnis:</strong> „Es gibt nichts zu tun. Er hat eine Blutinfektion, und sie ist bereits sehr weit fortgeschritten; sie muss andere Organe beeinträchtigt haben. Wir haben ein Antibiogramm veranlasst, aber bis wir sicher wissen, welche Bakterie es ist, müssen wir ihn mit allgemeinen Antibiotika behandeln".</p>
+                            </div>
+                            <p>Was? Ich erstarrte. Ich rief meinen Anwalt an, und er sagte: <strong>KUNSTFEHLER.</strong></p>
+                            <p>Aber in meinem Herzen hallte nur ein Todesurteil wider. Wie konnten sie so grausam sein, ihm das Bein zu amputieren, obwohl sie wussten, dass sie ihn bereits zum Tode verurteilt hatten? Sie verabreichten ihm nicht einmal rechtzeitig Schmerzmittel; mein Onkel schrie vor Schmerzen, war unruhig… er verbrachte die ganze Nacht so.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Sonntag 09/08</div>
+                        <div class="timeline-content">
+                            <p>Mein Onkel verbrachte die ganze Nacht schreiend vor Schmerzen, riss sich die Infusionsleitungen heraus, die Windel… also beschlossen sie, ihn festzubinden. So viel Folter, so viel Mangel an Mitgefühl.</p>
+                            <p>Ich beschwerte mich erneut bei Dr. Daniel Galeano, damit sie ihm die notwendigen Schmerzmittel verabreichten; er ging zu ihm, änderte nichts und sagte mir: „Es gibt nichts mehr zu tun."</p>
+                            <p><strong>Mein Onkel Aris starb an einer allgemeinen Sepsis, nach sieben Tagen im Krankenhaus.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>Die Realität:</strong> Es wirkt wie ein Horrorfilm, aber es ist mir passiert, und ich kann es immer noch nicht verarbeiten. Die Kumpanei von Ärzten, die ihren Beruf nicht mit der Sorgfalt und Aufmerksamkeit ausüben, die die Zerbrechlichkeit eines Lebens verdient und geehrt werden muss, und von Krankenschwestern, die ihre Arbeit nicht gut machen (es gab viele Beschwerden während der Zeit, in der mein Onkel im Krankenhaus war), die einem weder ihre Namen noch ihre Nachnamen nennen, noch einen korrekt informieren, ist unbeschreiblich.</p>
+                </div>
+
+                <h2 class="section-title">Die Vernachlässigung: Es war nicht nur eine Fahrlässigkeit, es waren zwei</h2>
+
+                <div class="narrative-section">
+                    <p>Die Probleme begannen, bevor wir die fatale Woche im August erreichten. Mein Onkel wurde am 23. Juli wegen starker Magenschmerzen aufgenommen. Er hatte etwas gegessen, das ihm nicht bekommen war, und da er einen großen Tumor im Magen hatte (unbestimmter Art), war es das Beste, ihn zur Beobachtung stationär aufzunehmen, um sicher zu gehen.</p>
+                    <p>Während dieser Hospitalisierung wurde ein Brust-CT durchgeführt. Und hier geschah das Unverständliche: Sie identifizierten einen bilateralen Pleuraerguss in der linken Lunge. Ein ernstes Problem, das sofortige ärztliche Aufmerksamkeit erforderte… aber was taten die Ärzte dagegen?</p>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>NICHTS. ABSOLUT NICHTS.</strong></p>
+                    <p>Es wurde keine Behandlung verschrieben. Keine Überwachung. Sie ignorierten es einfach. Sie entließen ihn am 28. Juli 2026 mit der Anweisung, seine Basisbehandlung fortzusetzen: Omeprazol, Tramadol und Paracetamol….</p>
+                </div>
+
+                <div class="narrative-section">
+                    <p>Mein Onkel konnte nicht gut essen. Er konnte nicht schlafen. Er war sichtlich in schlechtem Zustand. Wir konnten es sehen, obwohl wir keine Ärzte sind. Aber die Clínica Urquiza schickte ihn einfach nach Hause. Ohne Überwachung. Ohne Nachverfolgung. Ohne Behandlung für diesen Erguss, der sich später als frühes Zeichen von etwas viel Ernsthafterem herausstellte.</p>
+                    <p>Fünf Tage später, am 2. August, mussten wir PAMI erneut anrufen. Meinem Onkel ging es viel schlechter. Er hatte eine Infektion im Bein, und diese Infektion war bereits in seinem Blutkreislauf. Eine Infektion, die hätte gestoppt werden können, wenn es angemessen behandelt worden wäre. Eine Infektion, die durch Fahrlässigkeit zu einer Sepsis wurde.</p>
+                    <p>Das war die erste Fahrlässigkeit. Und sie führte direkt zur zweiten. Und die zweite führte zu seinem Tod.</p>
+                </div>
+
+                <section class="narrative-section">
+                    <p>Man möchte glauben, dass Ärzte dazu ausgebildet wurden, zu helfen, das Gute zu tun, den Nächsten zu heilen. Aber manchmal verwandeln Fahrlässigkeit, Gleichgültigkeit und Mangel an Mitgefühl eine Gesundheitsinstitution in einen Ort der Folter.</p>
+                    <p>Hätte ich keine guten Anwälte gehabt, hätte ich niemals entdeckt, dass mein Onkel nicht eine, sondern zwei medizinische Fahrlässigkeiten erlitt. Schauderlich, makaber und absolut unmenschlich…</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- DANISH VERSION -->
+    <div id="danish" class="content-block">
+        <div class="hero">
+            <h1>Clínica Urquiza<br>Kronologi over en medicinsk forbrydelse i 7 dage</h1>
+            <p class="subtitle">En families vidnesbyrd om, hvordan medicinsk uagtsomhed torturerede og dræbte en god mand og forvandlede tilliden til medicin til en krigsskade.</p>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <section class="highlight-box">
+                    <h2 class="section-title">Sandhed og retfærdighed</h2>
+                    <p>Denne side samler testimonierne fra vores familie og den tilgængelige dokumentation om den behandling, som Aristóvol "Aris" Gómez modtog på Clínica Urquiza.</p>
+                    <p>Straffesagen er karakteriseret som <strong>uagtsom drab</strong> og er i efterforskningsfasen. Vi anmoder om, at ansvaret for hver person og institution, der er involveret, fastslås med stringens.</p>
+                </section>
+
+                <h2 class="section-title">Medicinsk uagtsomhed: En lidelsesvej i 7 dage</h2>
+
+                <div class="narrative-section">
+                    <p>Der er en før og en efter, når man ser nogen blive tortureret og dræbt foran sine egne øjne. Især hvis det er familie. Det før og det efter ramte mig. Dette er mit vidnesbyrd.</p>
+                    <p>Min onkel Aris var en person fuld af energi og vilje til at leve. Desværre havde han den 1. juni en trafikulykke, som førte ham til Clínica Urquiza. Han havde ingen frakturer, Gud ske lov; han havde kun skadet sit højre ben nær knæet.</p>
+                    <p>Det, der fulgte efter den første ulykke, var en række af uagtsomme lægelige beslutninger, der kulminerede i min onkels død. Og det hele begyndte, da lægerne på Clínica Urquiza valgte ikke at behandle en alvorlig komplikation, som de allerede havde identificeret.</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Søndag 02/08</div>
+                        <div class="timeline-content">
+                            <p>Vi bemærkede, at min onkels fod og læg var lilla og kolde. Vi ringede til PAMI. Ambulanse kom hjem til ham kl. 17.00. Vi gik direkte til Clínica Urquiza, og omkring kl. 20.00 fik han udskrivning for observation for at undersøge årsagen til hans symptomer.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Mandag 03/08</div>
+                        <div class="timeline-content">
+                            <p>Vi ventede, mens vi så, at infektionen fortsatte med at stige op i det venstre ben, og vi blev hele tiden informeret af dr. Dario Castro om, at det var et kredsløbsproblem.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Onsdag</div>
+                        <div class="timeline-content">
+                            <p>Sent på eftermiddagen blev der lavet et angiogram. Dr. Pedro Cepa fortalte os, at min onkel var i en kritisk tilstand, og at kirurgen ville tale med os næste dag for at fastlægge næste skridt.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Torsdag</div>
+                        <div class="timeline-content">
+                            <p>Sent på eftermiddagen kom kirurgen og meddelte os, at benet måtte amputeres. Men det var mistænkeligt, for vi blev fortalt, at de kun opererer mandag eller onsdag.</p>
+                            <p><strong>Mine tvivl begynder…</strong> Det tog tre dage at lave et angiogram, og så fortalte de os, at "benet var allerede tabt, at der ikke var noget at gøre, og at det måtte amputeres".</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>Virkeligheden:</strong> Det ligner en skrækfilm, men det skete mig, og jeg kan stadig ikke bearbejde det. Uagtsomheden fra læger og sygeplejersker, som ikke handlede med omhu, ansvarlighed og medfølelse, er uforklarlig.</p>
+                </div>
+
+                <h2 class="section-title">Forladthed: Det var ikke kun én fejl, det var to</h2>
+
+                <div class="narrative-section">
+                    <p>Problemerne begyndte før den fatale uge i august. Min onkel blev indlagt den 23. juli med svære mavesmerter. Han havde spist noget, der havde skadet ham, og fordi han havde en stor tumor i maven, var det bedst at holde ham under observation for at være sikker.</p>
+                    <p>Under indlæggelsen blev der lavet en CT-scanning af brystet. Her skete det uforståelige: de identificerede et bilateralt pleuravæske i venstre lunge. Et alvorligt problem, som krævede øjeblikkelig lægelig behandling… men hvad gjorde lægerne?</p>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>INGEN. ABSOLUT INGEN.</strong></p>
+                    <p>Der blev ikke ordineret nogen behandling. Ingen overvågning. De ignorerede det simpelthen. Han blev udskrevet den 28. juli 2026 med instruktioner om at fortsætte sin normale behandling: omeprazol, tramadol og paracetamol.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="submit-panel" class="tab-panel">
+        <div class="container">
+            <div class="content">
+                <div class="submit-card">
+                    <h2 class="section-title" data-i18n="submitTitle">Contame tu historia</h2>
+                    <p data-i18n="submitDescription">Compartí la historia de alguien que pudo haber sufrido algo similar. Este formulario ayuda a documentar otras experiencias con respeto y cuidado.</p>
+
+                    <form id="testimony-form" class="testimony-form">
+                        <div>
+                            <label for="testimony-title" data-i18n="titleLabel">Título</label>
+                            <input id="testimony-title" type="text" placeholder="Título del testimonio" data-placeholder-key="titlePlaceholder">
+                        </div>
+
+                        <div>
+                            <label for="testimony-description" data-i18n="descriptionLabel">Descripción</label>
+                            <textarea id="testimony-description" placeholder="Describe lo que ocurrió" data-placeholder-key="descriptionPlaceholder"></textarea>
+                        </div>
+
+                        <div>
+                            <label for="testimony-images" data-i18n="imagesLabel">Imágenes</label>
+                            <input id="testimony-images" type="file" accept="image/*" multiple>
+                            <div id="image-preview" class="image-preview"></div>
+                        </div>
+
+                        <button type="submit" data-i18n="submitButton">Enviar testimonio</button>
+                    </form>
+                </div>
+
+                <div class="submit-card">
+                    <h3 class="section-title" data-i18n="savedTitle">Testimonios enviados</h3>
+                    <div id="saved-testimonies" class="saved-testimonies"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -292,138 +886,239 @@
     </footer>
 
     <script>
-        // Content data embedded directly
-        const loadedContent = {
-            es: null,
-            en: null,
-            de: null
+        const translations = {
+            es: {
+                submitTitle: 'Contame tu historia',
+                submitDescription: 'Compartí la historia de alguien que pudo haber sufrido algo similar. Este formulario ayuda a documentar otras experiencias con respeto y cuidado.',
+                titleLabel: 'Título',
+                descriptionLabel: 'Descripción',
+                imagesLabel: 'Imágenes',
+                submitButton: 'Enviar testimonio',
+                savedTitle: 'Testimonios enviados',
+                emptyState: 'Todavía no hay testimonios enviados.',
+                titlePlaceholder: 'Título del testimonio',
+                descriptionPlaceholder: 'Describe lo que ocurrió y cómo afectó a la persona.'
+            },
+            en: {
+                submitTitle: 'Tell us your story',
+                submitDescription: 'Share the story of someone who may have suffered something similar. This form helps document other experiences with respect and care.',
+                titleLabel: 'Title',
+                descriptionLabel: 'Description',
+                imagesLabel: 'Images',
+                submitButton: 'Submit testimony',
+                savedTitle: 'Submitted testimonies',
+                emptyState: 'No testimonies submitted yet.',
+                titlePlaceholder: 'Testimony title',
+                descriptionPlaceholder: 'Describe what happened and how it affected the person.'
+            },
+            de: {
+                submitTitle: 'Erzähl uns deine Geschichte',
+                submitDescription: 'Teilen Sie die Geschichte einer Person, die Ähnliches erlebt haben könnte. Dieses Formular hilft dabei, andere Erfahrungen respektvoll und sorgfältig zu dokumentieren.',
+                titleLabel: 'Titel',
+                descriptionLabel: 'Beschreibung',
+                imagesLabel: 'Bilder',
+                submitButton: 'Zeugnis senden',
+                savedTitle: 'Eingereichte Zeugnisse',
+                emptyState: 'Es wurden noch keine Zeugnisse eingereicht.',
+                titlePlaceholder: 'Titel des Zeugnisses',
+                descriptionPlaceholder: 'Beschreiben Sie, was passiert ist und wie es die Person betroffen hat.'
+            },
+            da: {
+                submitTitle: 'Fortæl os din historie',
+                submitDescription: 'Del historien om nogen, der kan have lidt noget lignende. Dette formular hjælper med at dokumentere andre oplevelser med respekt og omsorg.',
+                titleLabel: 'Titel',
+                descriptionLabel: 'Beskrivelse',
+                imagesLabel: 'Billeder',
+                submitButton: 'Indsend vidnesbyrd',
+                savedTitle: 'Indsendte vidnesbyrd',
+                emptyState: 'Der er endnu ikke indsendt nogen vidnesbyrd.',
+                titlePlaceholder: 'Vidnesbyrdets titel',
+                descriptionPlaceholder: 'Beskriv, hvad der skete, og hvordan det påvirkede personen.'
+            }
         };
 
-        // Load all content on page load
-        async function initializeContent() {
-            try {
-                // Try to load from JSON files first
-                for (const lang of ['es', 'en', 'de']) {
-                    try {
-                        const response = await fetch(`content-${lang}.json`);
-                        if (response.ok) {
-                            loadedContent[lang] = await response.json();
-                        }
-                    } catch (e) {
-                        console.warn(`Could not load content-${lang}.json from file`);
-                    }
+        let currentLanguage = 'es';
+        let activeTab = 'story';
+
+        function updateLanguageText() {
+            document.querySelectorAll('[data-i18n]').forEach((element) => {
+                const key = element.dataset.i18n;
+                if (translations[currentLanguage][key]) {
+                    element.textContent = translations[currentLanguage][key];
                 }
-                
-                // If files didn't load, we'll show an error message
-                if (!loadedContent.es && !loadedContent.en && !loadedContent.de) {
-                    document.body.innerHTML = '<div style="padding: 2rem; text-align: center;"><h1>Content Loading Error</h1><p>The content files could not be loaded. Please ensure content-es.json, content-en.json, and content-de.json are in the same directory as index.html.</p></div>';
-                    return;
-                }
-                
-                changeLanguage('es'); // Load Spanish by default
-            } catch (error) {
-                console.error('Error loading content:', error);
-            }
-        }
-
-        function renderTimeline(timelineData) {
-            return timelineData.map(item => `
-                <div class="timeline-item">
-                    <div class="timeline-date">${item.date}</div>
-                    <div class="timeline-content">
-                        ${item.content.split('\n\n').map(p => {
-                            // Handle bold text
-                            p = p.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-                            return `<p>${p}</p>`;
-                        }).join('')}
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function renderContent(lang) {
-            const content = loadedContent[lang];
-            if (!content) return '';
-
-            const warningTitle = lang === 'es' ? 'La realidad: ' : lang === 'en' ? 'The reality: ' : 'Die Realität: ';
-
-            return `
-                <section class="narrative-section">
-                    ${content.introduction.text.map(p => `<p>${p}</p>`).join('')}
-                </section>
-
-                <h2 class="section-title">${content.secondMalpractice.title}</h2>
-
-                <div class="timeline">
-                    ${renderTimeline(content.secondMalpractice.timeline)}
-                </div>
-
-                <div class="warning-box">
-                    <p><strong>${warningTitle}</strong>${content.secondMalpractice.warning}</p>
-                </div>
-
-                <h2 class="section-title">${content.firstMalpractice.title}</h2>
-                
-                <div class="narrative-section">
-                    ${content.firstMalpractice.introduction.map(p => `<p>${p}</p>`).join('')}
-                </div>
-
-                <div class="warning-box">
-                    ${content.firstMalpractice.warning.split('\n\n').map(p => `<p>${p}</p>`).join('')}
-                </div>
-
-                <div class="narrative-section">
-                    ${content.firstMalpractice.narrative.map(p => `<p>${p}</p>`).join('')}
-                </div>
-
-                <section class="narrative-section">
-                    ${content.conclusion.text.map(p => `<p>${p}</p>`).join('')}
-                </section>
-            `;
-        }
-
-        function changeLanguage(lang) {
-            // Hide all content blocks
-            document.getElementById('spanish').classList.remove('active');
-            document.getElementById('english').classList.remove('active');
-            document.getElementById('german').classList.remove('active');
-
-            // Remove active class from all buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
             });
 
-            // Set active based on language
-            const langIndex = lang === 'es' ? 0 : lang === 'en' ? 1 : 2;
-            document.querySelectorAll('.lang-btn')[langIndex].classList.add('active');
-
-            // Update HTML lang attribute
-            document.documentElement.lang = lang;
-
-            // Load content from JSON
-            const content = loadedContent[lang];
-            if (!content) return;
-
-            // Update hero
-            document.getElementById(`hero-title-${lang}`).innerHTML = 
-                `${content.hero.title}<br>${content.hero.subtitle}`;
-            document.getElementById(`hero-desc-${lang}`).textContent = content.hero.description;
-
-            // Update main content
-            document.getElementById(`content-${lang}`).innerHTML = renderContent(lang);
-
-            // Update footer
-            document.querySelector('footer').innerHTML = `
-                <p>${content.footer.copyright}</p>
-                <p>${content.footer.note}</p>
-            `;
-
-            // Show the active language block
-            document.getElementById(lang === 'es' ? 'spanish' : lang === 'en' ? 'english' : 'german').classList.add('active');
+            const titleInput = document.getElementById('testimony-title');
+            const descInput = document.getElementById('testimony-description');
+            if (titleInput) titleInput.placeholder = translations[currentLanguage].titlePlaceholder;
+            if (descInput) descInput.placeholder = translations[currentLanguage].descriptionPlaceholder;
         }
 
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', initializeContent);
+        const contentFiles = {
+            es: 'content-es.json',
+            en: 'content-en.json',
+            de: 'content-de.json',
+            da: 'content-da.json'
+        };
+
+        function escapeHtml(value) {
+            return String(value)
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;')
+                .replaceAll('"', '&quot;')
+                .replaceAll("'", '&#039;');
+        }
+
+        function renderParagraphs(text) {
+            return text.split('\n\n')
+                .map(paragraph => '<p>' + escapeHtml(paragraph).replaceAll('\n', '<br>') + '</p>')
+                .join('');
+        }
+
+        function renderStory(content) {
+            const timeline = content.secondMalpractice.timeline.map(item =>
+                '<div class="timeline-item"><div class="timeline-date">' + escapeHtml(item.date) + '</div>' +
+                '<div class="timeline-content">' + renderParagraphs(item.content) + '</div></div>'
+            ).join('');
+
+            document.getElementById('story-content').innerHTML =
+                '<div class="hero"><h1>' + escapeHtml(content.hero.title) + '</h1>' +
+                '<p class="subtitle highlighted-subtitle">' + escapeHtml(content.hero.subtitle) + '</p>' +
+                '<p class="subtitle hero-description">' + escapeHtml(content.hero.description) + '</p></div>' +
+                '<div class="container"><div class="content">' +
+                '<section class="highlight-box"><h2 class="section-title">' + escapeHtml(content.truthAndJustice.title) + '</h2>' +
+                content.truthAndJustice.content.map(renderParagraphs).join('') + '</section>' +
+                '<h2 class="section-title">' + escapeHtml(content.secondMalpractice.title) + '</h2>' +
+                '<div class="narrative-section">' + content.introduction.text.map(renderParagraphs).join('') + '</div>' +
+                '<div class="timeline">' + timeline + '</div>' +
+                '<div class="warning-box">' + renderParagraphs(content.secondMalpractice.warning) + '</div>' +
+                '<h2 class="section-title">' + escapeHtml(content.firstMalpractice.title) + '</h2>' +
+                '<div class="narrative-section">' + content.firstMalpractice.introduction.map(renderParagraphs).join('') + '</div>' +
+                '<div class="warning-box">' + renderParagraphs(content.firstMalpractice.warning) + '</div>' +
+                '<div class="narrative-section">' + content.firstMalpractice.narrative.map(renderParagraphs).join('') + '</div>' +
+                '<section class="narrative-section">' + content.conclusion.text.map(renderParagraphs).join('') + '</section>' +
+                '</div></div>';
+
+            document.querySelector('footer p').textContent = content.footer.copyright;
+            document.querySelector('footer p + p').textContent = content.footer.note;
+            document.title = content.hero.title + ': ' + content.hero.subtitle;
+        }
+
+        async function changeLanguage(lang) {
+            currentLanguage = lang;
+            document.querySelectorAll('.lang-btn').forEach(button => {
+                button.classList.toggle('active', button.getAttribute('onclick').includes("'" + lang + "'"));
+            });
+            document.documentElement.lang = lang;
+
+            const response = await fetch(contentFiles[lang]);
+            renderStory(await response.json());
+            updateLanguageText();
+            renderSavedTestimonies();
+        }
+
+        function switchTab(tabName) {
+            activeTab = tabName;
+            document.querySelectorAll('.nav-btn').forEach((button) => {
+                button.classList.toggle('active', button.dataset.tab === tabName);
+            });
+
+            document.getElementById('story-content').style.display = tabName === 'story' ? 'block' : 'none';
+            document.getElementById('submit-panel').classList.toggle('active', tabName === 'submit');
+
+            if (tabName === 'story') {
+                changeLanguage(currentLanguage);
+            }
+
+            updateLanguageText();
+            renderSavedTestimonies();
+        }
+
+        function buildPreview(images) {
+            const preview = document.getElementById('image-preview');
+            preview.innerHTML = '';
+            images.forEach((image) => {
+                const img = document.createElement('img');
+                img.src = image;
+                img.alt = 'Uploaded preview';
+                preview.appendChild(img);
+            });
+        }
+
+        function readFilesAsDataUrls(files) {
+            return Promise.all(Array.from(files).map(file => new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            })));
+        }
+
+        function renderSavedTestimonies() {
+            const container = document.getElementById('saved-testimonies');
+            const stored = JSON.parse(localStorage.getItem('submittedTestimonies') || '[]');
+
+            if (!stored.length) {
+                container.innerHTML = '<p>' + translations[currentLanguage].emptyState + '</p>';
+                return;
+            }
+
+            container.innerHTML = stored.map((entry) => {
+                const images = (entry.images || []).map((image) => '<img src="' + image + '" alt="Evidence image">').join('');
+                return '<div class="saved-entry">' +
+                    '<h4>' + entry.title + '</h4>' +
+                    '<p>' + entry.description + '</p>' +
+                    '<div class="gallery">' + images + '</div>' +
+                    '</div>';
+            }).join('');
+        }
+
+        document.getElementById('testimony-images').addEventListener('change', async (event) => {
+            const files = event.target.files;
+            if (!files || files.length === 0) {
+                buildPreview([]);
+                return;
+            }
+
+            const dataUrls = await readFilesAsDataUrls(files);
+            buildPreview(dataUrls);
+        });
+
+        document.getElementById('testimony-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const title = document.getElementById('testimony-title').value.trim();
+            const description = document.getElementById('testimony-description').value.trim();
+            const files = document.getElementById('testimony-images').files;
+            const loadedImages = files && files.length ? await readFilesAsDataUrls(files) : [];
+
+            if (!title || !description) {
+                alert(currentLanguage === 'es' ? 'Por favor, completa el título y la descripción.' : currentLanguage === 'de' ? 'Bitte füllen Sie Titel und Beschreibung aus.' : currentLanguage === 'da' ? 'Udfyld venligst titel og beskrivelse.' : 'Please complete the title and description.');
+                return;
+            }
+
+            const stored = JSON.parse(localStorage.getItem('submittedTestimonies') || '[]');
+            stored.unshift({
+                title,
+                description,
+                images: loadedImages
+            });
+            localStorage.setItem('submittedTestimonies', JSON.stringify(stored));
+
+            document.getElementById('testimony-form').reset();
+            buildPreview([]);
+            renderSavedTestimonies();
+        });
+
+        document.querySelectorAll('.nav-btn').forEach((button) => {
+            button.addEventListener('click', () => switchTab(button.dataset.tab));
+        });
+
+        document.querySelectorAll('.content-block').forEach(block => block.remove());
+        updateLanguageText();
+        renderSavedTestimonies();
+        changeLanguage('es');
     </script>
 </body>
 </html>

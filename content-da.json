@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "title": "Clínica Urquiza",
+    "subtitle": "Kronologi over en medicinsk forbrydelse i 7 dage",
+    "description": "Et families vidnesbyrd om, hvordan en god mands liv blev forværret dag for dag og forvandlede tilliden til medicin til en krigsskade."
+  },
+  "truthAndJustice": {
+    "title": "Sandhed og retfærdighed",
+    "content": [
+      "Denne side samler vores families vidnesbyrd og den tilgængelige dokumentation om den behandling, som Aristóvol \"Onkel Aris\" Gómez modtog på Clínica Urquiza.",
+      "Straffesagen er karakteriseret som uagtsom drab og er i efterforskningsfasen. Vi anmoder om, at ansvaret for hver person og institution, der er involveret, fastslås med stringens."
+    ]
+  },
+  "introduction": {
+    "text": [
+      "Der er en før og en efter, når man ser nogen blive tortureret og dræbt foran sine egne øjne. Især hvis det er familie. Det før og det efter ramte mig. Dette er mit vidnesbyrd.",
+      "Min onkel Aris var en person fuld af energi og vilje til at leve. Desværre havde han den 1. juni en trafikulykke, som førte ham til Clínica Urquiza. Han havde ingen frakturer, Gud ske lov; han havde kun skadet sit højre ben nær knæet.",
+      "Det, der fulgte efter den første ulykke, var en række uagtsomme lægelige beslutninger foran vores øjne, der kulminerede i min onkels død. Og det hele begyndte, da lægerne på Clínica Urquiza valgte ikke at behandle en alvorlig komplikation, som de allerede havde identificeret."
+    ]
+  },
+  "secondMalpractice": {
+    "title": "Medicinsk uagtsomhed: En lidelsesvej i 7 dage",
+    "timeline": [
+      {
+        "date": "Søndag 02/08",
+        "content": "Vi bemærkede, at min onkels fod og læg var lilla og kolde. Vi ringede til PAMI. Ambulanse kom hjem til ham kl. 17.00. Vi gik direkte til Clínica Urquiza, og omkring kl. 20.00 fik han udskrivning for observation for at undersøge årsagen til hans symptomer."
+      },
+      {
+        "date": "Mandag 03/08",
+        "content": "Vi ventede, mens vi så, at tilstanden fortsatte op ad det venstre ben, som blev mere og mere lilla, men den vagthavende læge, der havde ansvaret for afdelingen den uge, fortalte os, at det var et kredsløbsproblem."
+      },
+      {
+        "date": "Tirsdag 04/08",
+        "content": "Vi ventede…"
+      },
+      {
+        "date": "Onsdag 05/08",
+        "content": "Sent på eftermiddagen blev der lavet et angiogram. Nattevagten fortalte os, at angiogrammet var gået godt, og at vi måtte vente på, at kirurgen fortalte os de næste skridt. Han fortalte også, at min onkel var i kritisk tilstand, og at kirurgen ville tale med os næste dag."
+      },
+      {
+        "date": "Torsdag 06/08",
+        "content": "Sent på eftermiddagen kom kirurgen og meddelte os, at benet måtte amputeres. Men det var mistænkeligt, for vi blev fortalt, at de kun opererer mandag eller onsdag.\n\nMine tvivl begynder… Det tog tre dage at lave et angiogram, og så fortalte de os, at \"benet var allerede tabt, at der ikke var noget at gøre, og at det måtte amputeres\".\n\nHvis det er en nødsituation, hvorfor opererer de så ikke med det samme?"
+      },
+      {
+        "date": "Fredag 07/08",
+        "content": "Tidligt om morgenen pressede jeg på for, at de skulle operere med det samme, med advokater og pres på klinikledelsen. Til sidst opererede de den dag og amputerede benet. Med al den smerte, det betød for patienten, min onkel, men også for os håbet om at stoppe nekrosen og begynde den smertefulde og vanskelige helingsproces."
+      },
+      {
+        "date": "Lørdag 08/08",
+        "content": "Lægen skifter. Det var sandhedens øjeblik.\n\nVi bemærkede, at fingrene på hans hånd også blev sorte, og det samme gjorde fodsålen på hans anden fod.\n\nSå konfronterede jeg den nye vagthavende læge, dr. Daniel Galeano, og bad ham om straks at hjælpe min onkel og give ham antikoagulantia, fordi \"kredsløbsproblemet\" fortsatte med at udvikle sig, og fordi vi havde tilkaldt advokater og krævede den bedste behandling for ham… For sent.\n\nTilståelsen: \"Der er ikke noget at gøre. Han har en infektion i blodet, og den er allerede meget fremskreden; den må have påvirket andre organer. Vi har bestilt et antibiogram, men indtil vi med sikkerhed ved, hvilken bakterie det er, må vi behandle ham med bredspektrede antibiotika.\"\n\nHvad? Jeg frøs. Jeg ringede til min advokat, og han sagde: LÆGEFEJL.\n\nMen i mit hjerte genlød kun en dødsdom. Hvordan kunne de være så grusomme at amputere hans ben, når de vidste, at de allerede havde dømt ham til døden? De gav ham ikke engang smertestillende i tide; min onkel skreg af smerte, han var urolig… han tilbragte hele natten sådan."
+      },
+      {
+        "date": "Søndag 09/08",
+        "content": "Min onkel tilbragte hele natten med at skrige af smerte, rev sine drop ud og tog bleen af… så besluttede de at binde ham fast. Så meget tortur, så meget mangel på medfølelse.\n\nJeg klagede igen til dr. Daniel Galeano, så han kunne få de nødvendige smertestillende; han gik ind til ham, ændrede ingenting og sagde til mig: \"Der er ikke mere at gøre.\"\n\nMin onkel Aris døde af generaliseret sepsis efter syv dage på hospitalet."
+      }
+    ],
+    "warning": "Virkeligheden: Det ligner en skrækfilm, men det skete mig, og jeg kan stadig ikke bearbejde det. Uagtsomheden fra læger og sygeplejersker, som ikke handlede med omhu, ansvarlighed og medfølelse, er uforklarlig."
+  },
+  "firstMalpractice": {
+    "title": "Forladthed: Det var ikke kun én fejl, det var to",
+    "introduction": [
+      "Problemerne begyndte før den fatale uge i august. Min onkel blev indlagt den 23. juli med svære mavesmerter. Han havde spist noget, der havde skadet ham, og fordi han havde en stor tumor i maven, var det bedst at holde ham under observation for at være sikker.",
+      "Under indlæggelsen blev der lavet en CT-scanning af brystet. Her skete det uforståelige: de identificerede et bilateralt pleuravæske i venstre lunge. Et alvorligt problem, som krævede øjeblikkelig lægelig behandling… men hvad gjorde lægerne?"
+    ],
+    "warning": "INGEN. ABSOLUT INGEN.\n\nDer blev ikke ordineret nogen behandling. Ingen overvågning. De ignorerede det simpelthen. Han blev udskrevet den 28. juli 2026 med instruktioner om at fortsætte sin normale behandling: omeprazol, tramadol og paracetamol.",
+    "narrative": [
+      "Min onkel kunne ikke spise godt. Han kunne ikke sove. Han var synligt i dårlig forfatning. Vi kunne se det, selv om vi ikke er læger. Men Clínica Urquiza sendte ham hjem sådan. Uden overvågning. Uden opfølgning. Uden behandling for denne væskeansamling, som vi nu ved var et tidligt tegn på noget langt mere alvorligt.",
+      "Fem dage senere, den 2. august, måtte vi ringe til PAMI igen. Min onkel havde det meget værre. Han havde en infektion i benet, og infektionen var allerede i blodbanen. En infektion, der kunne være blevet stoppet, hvis den var blevet behandlet korrekt. En infektion, der på grund af uagtsomhed blev til sepsis.",
+      "Det var den første lægefejl. Og den førte direkte til den anden. Og den anden førte til hans død."
+    ]
+  },
+  "conclusion": {
+    "text": [
+      "Man ønsker at tro, at læger er uddannet til at hjælpe, gøre det gode og helbrede sin næste. Men nogle gange forvandler uagtsomhed, ligegyldighed og mangel på medfølelse en sundhedsinstitution til et tortursted.",
+      "Hvis jeg ikke havde haft gode advokater, ville jeg aldrig have opdaget, at min onkel ikke led under én, men to tilfælde af lægefejl. Rystende, makabert og absolut umenneskeligt…"
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 Vidnesbyrd om Aristovol Gomez | Clínica Urquiza - Dokumentation af medicinsk uagtsomhed",
+    "note": "Dette websted dokumenterer en sag om alvorlig medicinsk uagtsomhed med henblik på uddannelse og retfærdighed."
+  }
+}
