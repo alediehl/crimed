@@ -299,6 +299,12 @@
             width: fit-content;
         }
 
+        .form-feedback {
+            margin-top: 1rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
         .image-preview {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -854,21 +860,22 @@
                     <form id="testimony-form" class="testimony-form">
                         <div>
                             <label for="testimony-title" data-i18n="titleLabel">Título</label>
-                            <input id="testimony-title" type="text" placeholder="Título del testimonio" data-placeholder-key="titlePlaceholder">
+                            <input id="testimony-title" type="text" placeholder="Título del testimonio" data-placeholder-key="titlePlaceholder" required>
                         </div>
 
                         <div>
                             <label for="testimony-description" data-i18n="descriptionLabel">Descripción</label>
-                            <textarea id="testimony-description" placeholder="Describe lo que ocurrió" data-placeholder-key="descriptionPlaceholder"></textarea>
+                            <textarea id="testimony-description" placeholder="Describe lo que ocurrió" data-placeholder-key="descriptionPlaceholder" required></textarea>
                         </div>
 
                         <div>
                             <label for="testimony-images" data-i18n="imagesLabel">Imágenes</label>
-                            <input id="testimony-images" type="file" accept="image/*" multiple>
+                            <input id="testimony-images" type="file" accept="image/*,.zip,application/zip,application/x-zip-compressed" multiple>
                             <div id="image-preview" class="image-preview"></div>
                         </div>
 
                         <button type="submit" data-i18n="submitButton">Enviar testimonio</button>
+                        <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
                     </form>
                 </div>
 
@@ -894,6 +901,8 @@
                 descriptionLabel: 'Descripción',
                 imagesLabel: 'Imágenes',
                 submitButton: 'Enviar testimonio',
+                sentMessage: 'Vamos a leer tu comentario y agregarlo a los testimonios luego de chequearlos.',
+                invalidFiles: 'Solo se permiten imágenes o archivos ZIP.',
                 savedTitle: 'Testimonios enviados',
                 emptyState: 'Todavía no hay testimonios enviados.',
                 titlePlaceholder: 'Título del testimonio',
@@ -906,6 +915,8 @@
                 descriptionLabel: 'Description',
                 imagesLabel: 'Images',
                 submitButton: 'Submit testimony',
+                sentMessage: 'We will read your comment and add it to the testimonies after reviewing it.',
+                invalidFiles: 'Only image or ZIP files are allowed.',
                 savedTitle: 'Submitted testimonies',
                 emptyState: 'No testimonies submitted yet.',
                 titlePlaceholder: 'Testimony title',
@@ -918,6 +929,8 @@
                 descriptionLabel: 'Beschreibung',
                 imagesLabel: 'Bilder',
                 submitButton: 'Zeugnis senden',
+                sentMessage: 'Wir lesen Ihren Kommentar und fügen ihn nach der Prüfung den Zeugnissen hinzu.',
+                invalidFiles: 'Nur Bild- oder ZIP-Dateien sind erlaubt.',
                 savedTitle: 'Eingereichte Zeugnisse',
                 emptyState: 'Es wurden noch keine Zeugnisse eingereicht.',
                 titlePlaceholder: 'Titel des Zeugnisses',
@@ -930,6 +943,8 @@
                 descriptionLabel: 'Beskrivelse',
                 imagesLabel: 'Billeder',
                 submitButton: 'Indsend vidnesbyrd',
+                sentMessage: 'Vi læser din kommentar og føjer den til vidnesbyrdene, når den er blevet gennemgået.',
+                invalidFiles: 'Kun billed- eller ZIP-filer er tilladt.',
                 savedTitle: 'Indsendte vidnesbyrd',
                 emptyState: 'Der er endnu ikke indsendt nogen vidnesbyrd.',
                 titlePlaceholder: 'Vidnesbyrdets titel',
@@ -1055,6 +1070,15 @@
             })));
         }
 
+        function isAllowedFile(file) {
+            const fileName = file.name.toLowerCase();
+            return file.type.startsWith('image/') || fileName.endsWith('.zip');
+        }
+
+        function setFormFeedback(message) {
+            document.getElementById('form-feedback').textContent = message;
+        }
+
         function renderSavedTestimonies() {
             const container = document.getElementById('saved-testimonies');
             const stored = JSON.parse(localStorage.getItem('submittedTestimonies') || '[]');
@@ -1078,11 +1102,21 @@
             const files = event.target.files;
             if (!files || files.length === 0) {
                 buildPreview([]);
+                setFormFeedback('');
                 return;
             }
 
-            const dataUrls = await readFilesAsDataUrls(files);
+            if (!Array.from(files).every(isAllowedFile)) {
+                event.target.value = '';
+                buildPreview([]);
+                setFormFeedback(translations[currentLanguage].invalidFiles);
+                return;
+            }
+
+            const imageFiles = Array.from(files).filter(file => file.type.startsWith('image/'));
+            const dataUrls = await readFilesAsDataUrls(imageFiles);
             buildPreview(dataUrls);
+            setFormFeedback('');
         });
 
         document.getElementById('testimony-form').addEventListener('submit', async (event) => {
@@ -1091,20 +1125,45 @@
             const title = document.getElementById('testimony-title').value.trim();
             const description = document.getElementById('testimony-description').value.trim();
             const files = document.getElementById('testimony-images').files;
-            const loadedImages = files && files.length ? await readFilesAsDataUrls(files) : [];
+            const selectedFiles = files ? Array.from(files) : [];
 
             if (!title || !description) {
                 alert(currentLanguage === 'es' ? 'Por favor, completa el título y la descripción.' : currentLanguage === 'de' ? 'Bitte füllen Sie Titel und Beschreibung aus.' : currentLanguage === 'da' ? 'Udfyld venligst titel og beskrivelse.' : 'Please complete the title and description.');
                 return;
             }
 
+            if (!selectedFiles.every(isAllowedFile)) {
+                setFormFeedback(translations[currentLanguage].invalidFiles);
+                return;
+            }
+
+            const loadedImages = selectedFiles.filter(file => file.type.startsWith('image/')).length
+                ? await readFilesAsDataUrls(selectedFiles.filter(file => file.type.startsWith('image/')))
+                : [];
+
             const stored = JSON.parse(localStorage.getItem('submittedTestimonies') || '[]');
             stored.unshift({
                 title,
                 description,
-                images: loadedImages
+                images: loadedImages,
+                files: selectedFiles.map(file => file.name)
             });
             localStorage.setItem('submittedTestimonies', JSON.stringify(stored));
+
+            const fileList = selectedFiles.length
+                ? selectedFiles.map(file => file.name).join('\n')
+                : 'No files attached';
+            const emailBody = [
+                'Title: ' + title,
+                '',
+                'Description:',
+                description,
+                '',
+                'Selected files:',
+                fileList
+            ].join('\n');
+            setFormFeedback(translations[currentLanguage].sentMessage);
+            window.location.href = 'mailto:ale.diehl@gmail.com?subject=' + encodeURIComponent('nuevo testimonio') + '&body=' + encodeURIComponent(emailBody);
 
             document.getElementById('testimony-form').reset();
             buildPreview([]);
